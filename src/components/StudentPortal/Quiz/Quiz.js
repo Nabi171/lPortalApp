@@ -1,12 +1,13 @@
 import React from 'react';
 import logo from "../../learningportal.svg";
+import { Link } from 'react-router-dom';
 const Quiz = () => {
     return (
         <div>
             {/* <!-- Navigatin Bar. It contains Logo, Center Text And Save Progress Button at the end --> */}
             <nav className="shadow-md">
                 <div className="max-w-7xl px-5 lg:px-0 mx-auto flex justify-between py-3">
-                    <img className="h-10" src={logo} />
+                    <Link to='/'> <img className="h-10" src={logo} /></Link>
                     <div className="flex items-center gap-3">
                         <h2 className="font-medium">Saad Hasan</h2>
                         <button
