@@ -1,13 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
+import logo from "../lws.svg";
 const Home = () => {
     return (
         <div>
             {/* <!-- Navigatin Bar. It contains Logo, Center Text And Save Progress Button at the end --> */}
             <nav className="shadow-md">
                 <div className="max-w-7xl px-5 lg:px-0 mx-auto flex justify-between py-3">
-                    <img className="h-10" src="./assets/image/learningportal.svg" />
+                    <img className="h-10" src={logo} />
                 </div>
             </nav>
 
