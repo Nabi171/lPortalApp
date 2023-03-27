@@ -29,9 +29,9 @@ const Login = () => {
 
                         <div className="flex items-center justify-end">
                             <div className="text-sm">
-                                <a href="./StudentReistration.html" className="font-medium text-violet-600 hover:text-violet-500">
+                                <Link to="/StudentPortal/StudentReistration" className="font-medium text-violet-600 hover:text-violet-500">
                                     Create New Account
-                        </a>
+                        </Link>
                             </div>
                         </div>
 
