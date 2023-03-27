@@ -24,10 +24,10 @@ function App() {
         <Route exact path='/StudentPortal/Course Player' element={<CoursePlayer />} />
         <Route exact path='/StudentPortal/leaderboard' element={<LeaderBoard />} />
         <Route exact path='/StudentPortal/quiz' element={<Quiz />} />
-        //adminPortal
-        <Route exact path='/Dashboard/dashboard' element={<DassBoard />} />
-        <Route exact path='/Dashboard/adminLogin' element={<AdminLogin />} />
 
+        //adminPortal
+        <Route exact path='/Dashboard/adminLogin' element={<AdminLogin />} />
+        <Route exact path='/Dashboard/dashboard' element={<DassBoard />} />
       </Routes>
 
     </BrowserRouter>
