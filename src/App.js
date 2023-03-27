@@ -10,6 +10,7 @@ import Resigtration from './components/StudentPortal/Resigtration/Resigtration';
 import DassBoard from './components/Admin Portal/Dassboard/DassBoard';
 import AdminLogin from './components/Admin Portal/AdminLogin/AdminLogin';
 import Assignment from './components/Admin Portal/Assignment/Assignment';
+import AssignmentMark from './components/Admin Portal/AssignmentMark/AssignmentMark';
 function App() {
   return (
 
@@ -30,6 +31,7 @@ function App() {
         <Route exact path='/Dashboard/adminLogin' element={<AdminLogin />} />
         <Route exact path='/Dashboard/dashboard' element={<DassBoard />} />
         <Route exact path='/Dashboard/assignment' element={<Assignment />} />
+        <Route exact path='/Dashboard/assignmentMark' element={<AssignmentMark />} />
       </Routes>
 
     </BrowserRouter>
