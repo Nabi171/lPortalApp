@@ -5,6 +5,8 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Login from './components/StudentPortal/Login/Login';
 import LeaderBoard from './components/StudentPortal/LeaderBoard/LeaderBoard';
 import Quiz from './components/StudentPortal/Quiz/Quiz';
+import CoursePlayer from './components/StudentPortal/Course Player/CoursePlayer';
+import Resigtration from './components/StudentPortal/Resigtration/Resigtration';
 function App() {
   return (
 
@@ -16,8 +18,11 @@ function App() {
 
         //StudentPortal
         <Route exact path='/StudentPortal/login' element={<Login />} />
+        <Route exact path='/StudentPortal/StudentReistration' element={<Resigtration />} />
+        <Route exact path='/StudentPortal/Course Player' element={<CoursePlayer />} />
         <Route exact path='/StudentPortal/leaderboard' element={<LeaderBoard />} />
         <Route exact path='/StudentPortal/quiz' element={<Quiz />} />
+      //adminPortal
 
 
       </Routes>
