@@ -8,6 +8,7 @@ import Quiz from './components/StudentPortal/Quiz/Quiz';
 import CoursePlayer from './components/StudentPortal/Course Player/CoursePlayer';
 import Resigtration from './components/StudentPortal/Resigtration/Resigtration';
 import DassBoard from './components/Admin Portal/Dassboard/DassBoard';
+import AdminLogin from './components/Admin Portal/AdminLogin/AdminLogin';
 function App() {
   return (
 
@@ -25,6 +26,7 @@ function App() {
         <Route exact path='/StudentPortal/quiz' element={<Quiz />} />
         //adminPortal
         <Route exact path='/Dashboard/dashboard' element={<DassBoard />} />
+        <Route exact path='/Dashboard/adminLogin' element={<AdminLogin />} />
 
       </Routes>
 
