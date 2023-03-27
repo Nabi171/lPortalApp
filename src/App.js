@@ -12,6 +12,8 @@ import AdminLogin from './components/Admin Portal/AdminLogin/AdminLogin';
 import Assignment from './components/Admin Portal/Assignment/Assignment';
 import AssignmentMark from './components/Admin Portal/AssignmentMark/AssignmentMark';
 import Quizzes from './components/Admin Portal/Quizzes/Quizzes';
+import Videos from './components/Admin Portal/Videos/Videos';
+
 function App() {
   return (
 
@@ -34,6 +36,7 @@ function App() {
         <Route exact path='/Dashboard/assignment' element={<Assignment />} />
         <Route exact path='/Dashboard/assignmentMark' element={<AssignmentMark />} />
         <Route exact path='/Dashboard/quizzes' element={<Quizzes />} />
+        <Route exact path='/Dashboard/videos' element={<Videos />} />
       </Routes>
 
     </BrowserRouter>
