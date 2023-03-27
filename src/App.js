@@ -7,6 +7,7 @@ import LeaderBoard from './components/StudentPortal/LeaderBoard/LeaderBoard';
 import Quiz from './components/StudentPortal/Quiz/Quiz';
 import CoursePlayer from './components/StudentPortal/Course Player/CoursePlayer';
 import Resigtration from './components/StudentPortal/Resigtration/Resigtration';
+import DassBoard from './components/Admin Portal/Dassboard/DassBoard';
 function App() {
   return (
 
@@ -22,8 +23,8 @@ function App() {
         <Route exact path='/StudentPortal/Course Player' element={<CoursePlayer />} />
         <Route exact path='/StudentPortal/leaderboard' element={<LeaderBoard />} />
         <Route exact path='/StudentPortal/quiz' element={<Quiz />} />
-      //adminPortal
-
+        //adminPortal
+        <Route exact path='/Dashboard/dashboard' element={<DassBoard />} />
 
       </Routes>
 
