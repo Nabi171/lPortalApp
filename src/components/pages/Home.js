@@ -19,11 +19,11 @@ const Home = () => {
                         <div className="bg-slate-900 p-4 border border-slate-700/80 rounded-md">
                             <h1 className="text-slate-100 font-bold text-xl">Student Portal</h1>
                             <div className="space-y-2 mt-4 flex flex-col">
-                                <a className="link" href="./StudentPortal/Course Player.html">Course Player</a>
+                                <a className="link" href="/StudentPortal/Course Player.html">Course Player</a>
                                 <Link className="link" to="/StudentPortal/leaderboard">Leaderboard</Link>
-                                <a className="link" href="./StudentPortal/Quiz.html">Quiz</a>
+                                <Link className="link" to="/StudentPortal/quiz">Quiz</Link>
                                 <Link className="link" to="/StudentPortal/login">StudentLogin</Link>
-                                <a className="link" href="./StudentPortal/StudentReistration.html">StudentReistration</a>
+                                <a className="link" href="/StudentPortal/StudentReistration.html">StudentReistration</a>
                             </div>
                         </div>
                         <div className="bg-slate-900 p-4 border border-slate-700/80 rounded-md">

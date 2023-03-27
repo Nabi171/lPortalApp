@@ -1,11 +1,12 @@
 import React from 'react';
-
+import logo from "../../learningportal.svg";
+import { Link } from 'react-router-dom';
 const LeaderBoard = () => {
     return (
         <div>
             <nav className="shadow-md">
                 <div className="max-w-7xl px-5 lg:px-0 mx-auto flex justify-between py-3">
-                    <img className="h-10" src="../assets/image/learningportal.svg" />
+                    <Link to='/'>  <img className="h-10" src={logo} /></Link>
                     <div className="flex items-center gap-3">
                         <a href="./Leaderboard.html" className="font-bold">Leaderboard</a>
                         <h2>Saad Hasan</h2>
