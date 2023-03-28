@@ -48,6 +48,24 @@
       "role": "student",
       "name": "Arif",
       "id": 7
+    },
+    {
+      "email": "nabi@gmail.com",
+      "password": "$2a$10$TbDbkOlRmDv7S9fs1axyueYgQcASzCl09eVXi90yah2iVVhu6lreu",
+      "name": "nabi",
+      "id": 8
+    },
+    {
+      "email": "nabiultasbed@gmail.com",
+      "password": "$2a$10$uu9A4IU6ni/y0G8kcVRtdeKsmnh4djXDBeWZtvZMJ8mwEh61H9oYG",
+      "name": "JANNATUL MAOWA ANISA",
+      "id": 9
+    },
+    {
+      "email": "faisalnabiul8@gmail.com",
+      "password": "$2a$10$5K57yF1MXAOFMAGop0rll.nytN.NKHnCwVw1Oa1yN8HD30ehJOGLa",
+      "name": "Nabiul Faisal",
+      "id": 10
     }
   ],
   "videos": [
