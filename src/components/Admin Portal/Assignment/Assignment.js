@@ -69,7 +69,7 @@ const Assignment = () => {
 
                                 <tbody className="divide-y divide-slate-600/50">
                                     {/* <SingleAg /> */}
-
+                                    {content}
                                 </tbody>
                             </table>
                         </div>
