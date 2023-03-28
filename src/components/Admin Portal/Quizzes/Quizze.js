@@ -1,13 +1,11 @@
 import React from 'react';
 
-const Video = ({ video }) => {
-    const { title, description, url, views, duration, createdAt } = video;
+const Quizze = () => {
     return (
-
         <tr>
-            <td className="table-td">{title}</td>
-            <td className="table-td">This is the 4th video of this...</td>
-            <td className="table-td flex gap-x-2">
+            <td className="table-td">Quiz 1 - JavaScript Interview Questions</td>
+            <td className="table-td">Debounce Function in JavaScript - JavaScript Job...</td>
+            <td className="table-td flex gap-x-2 justify-center">
                 <svg fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
                     className="w-6 h-6 hover:text-red-500 cursor-pointer transition-all">
                     <path stroke-linecap="round" stroke-linejoin="round"
@@ -21,8 +19,7 @@ const Video = ({ video }) => {
 
             </td>
         </tr>
-
     );
 };
 
-export default Video;
+export default Quizze;

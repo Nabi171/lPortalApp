@@ -20,6 +20,11 @@ export const apiSlice = createApi({
             keepUnusedDataFor: 600,
             providesTags: ["videos"],
         }),
+        getQuizzes: builder.query({
+            query: () => "/quizzes",
+            keepUnusedDataFor: 600,
+            providesTags: ["quizzes"],
+        }),
 
 
 
@@ -28,6 +33,7 @@ export const apiSlice = createApi({
 
 export const {
     useGetVideosQuery,
+    useGetQuizzesQuery,
 
 
 } = apiSlice;
