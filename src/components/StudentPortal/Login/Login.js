@@ -17,7 +17,7 @@ const Login = () => {
             setError(responseError.data);
         }
         if (data ?.accessToken && data ?.user) {
-            navigate("/");
+            navigate("/StudentPortal/Course Player");
         }
     }, [data, responseError, navigate]);
 

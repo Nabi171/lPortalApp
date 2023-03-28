@@ -13,35 +13,54 @@ import Assignment from './components/Admin Portal/Assignment/Assignment';
 import AssignmentMark from './components/Admin Portal/AssignmentMark/AssignmentMark';
 import Quizzes from './components/Admin Portal/Quizzes/Quizzes';
 import Videos from './components/Admin Portal/Videos/Videos';
+import useAuthCheck from './hooks/useAuthCheck';
+import PrivateRoute from './components/ui/PrivateRoute';
+import PublicRoute from './components/ui/PublicRoute';
 
 function App() {
-  return (
+  const authChecked = useAuthCheck();
+  return !authChecked ? (
+    <div>Checking authentication....</div>
+  ) : (
+      <BrowserRouter>
+        <Routes>
+          <Route exact path='/' element={<Home />} />
+          <Route exact path='/home' element={<Home />} />
+          <Route exact path='/home' element={<Home />} />
 
-    <BrowserRouter>
-      <Routes>
-        <Route exact path='/' element={<Home />} />
-        <Route exact path='/home' element={<Home />} />
-        <Route exact path='/home' element={<Home />} />
+          //StudentPortal
+          <Route exact path='/StudentPortal/login' element={
+            // <PublicRoute>
+            <Login />
+            // </PublicRoute>
 
-        //StudentPortal
-        <Route exact path='/StudentPortal/login' element={<Login />} />
-        <Route exact path='/StudentPortal/StudentReistration' element={<Resigtration />} />
-        <Route exact path='/StudentPortal/Course Player' element={<CoursePlayer />} />
-        <Route exact path='/StudentPortal/leaderboard' element={<LeaderBoard />} />
-        <Route exact path='/StudentPortal/quiz' element={<Quiz />} />
+          } />
 
-        //adminPortal
-        <Route exact path='/Dashboard/adminLogin' element={<AdminLogin />} />
-        <Route exact path='/Dashboard/dashboard' element={<DassBoard />} />
-        <Route exact path='/Dashboard/assignment' element={<Assignment />} />
-        <Route exact path='/Dashboard/assignmentMark' element={<AssignmentMark />} />
-        <Route exact path='/Dashboard/quizzes' element={<Quizzes />} />
-        <Route exact path='/Dashboard/videos' element={<Videos />} />
-      </Routes>
+          <Route exact path='/StudentPortal/Course Player' element={
+            <PrivateRoute>
+              <CoursePlayer />
+            </PrivateRoute>
 
-    </BrowserRouter>
+          } />
 
-  );
+
+          <Route exact path='/StudentPortal/StudentReistration' element={<Resigtration />} />
+
+          <Route exact path='/StudentPortal/leaderboard' element={<LeaderBoard />} />
+          <Route exact path='/StudentPortal/quiz' element={<Quiz />} />
+
+          //adminPortal
+          <Route exact path='/Dashboard/adminLogin' element={<AdminLogin />} />
+          <Route exact path='/Dashboard/dashboard' element={<DassBoard />} />
+          <Route exact path='/Dashboard/assignment' element={<Assignment />} />
+          <Route exact path='/Dashboard/assignmentMark' element={<AssignmentMark />} />
+          <Route exact path='/Dashboard/quizzes' element={<Quizzes />} />
+          <Route exact path='/Dashboard/videos' element={<Videos />} />
+        </Routes>
+
+      </BrowserRouter>
+
+    );
 }
 
 export default App;
