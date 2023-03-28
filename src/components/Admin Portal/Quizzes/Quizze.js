@@ -1,10 +1,11 @@
 import React from 'react';
 
-const Quizze = () => {
+const Quizze = ({ quizze }) => {
+    const { id, question, video_title } = quizze;
     return (
         <tr>
-            <td className="table-td">Quiz 1 - JavaScript Interview Questions</td>
-            <td className="table-td">Debounce Function in JavaScript - JavaScript Job...</td>
+            <td className="table-td">Quiz {id} - JavaScript Interview Questions</td>
+            <td className="table-td">{video_title}...</td>
             <td className="table-td flex gap-x-2 justify-center">
                 <svg fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
                     className="w-6 h-6 hover:text-red-500 cursor-pointer transition-all">
