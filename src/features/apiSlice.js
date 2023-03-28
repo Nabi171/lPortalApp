@@ -35,6 +35,11 @@ export const apiSlice = createApi({
             keepUnusedDataFor: 600,
             providesTags: ["assignments"],
         }),
+        getUsers: builder.query({
+            query: () => "/users",
+            keepUnusedDataFor: 600,
+            providesTags: ["users"],
+        }),
 
 
 
@@ -46,6 +51,7 @@ export const {
     useGetQuizzesQuery,
     useGetAssignmentMarkQuery,
     useGetAssignmentsQuery,
+    useGetUsersQuery,
 
 
 } = apiSlice;

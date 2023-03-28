@@ -1,7 +1,15 @@
 import React from 'react';
 import logo from "../../learningportal.svg";
 import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { userLoggedOut } from '../../../features/auth/authSlice';
 const DassBoard = () => {
+    const dispatch = useDispatch();
+
+    const logout = () => {
+        dispatch(userLoggedOut());
+        localStorage.clear();
+    };
     return (
         <div>
             <nav className="shadow-md">
@@ -10,6 +18,7 @@ const DassBoard = () => {
                     <div className="flex items-center gap-3">
                         <h2 className="font-bold">Admin</h2>
                         <button
+                            onClick={logout}
                             className="flex gap-2 items-center px-4 py-1 rounded-full text-sm transition-all bg-red-600 hover:bg-red-700 font-medium">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                                 stroke="currentColor" className="w-6 h-6">
