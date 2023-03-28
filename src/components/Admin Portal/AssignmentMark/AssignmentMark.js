@@ -1,7 +1,34 @@
 import React from 'react';
 import logo from "../../learningportal.svg";
 import { Link } from 'react-router-dom';
+import { useGetAssignmentMarkQuery } from '../../../features/apiSlice';
+import SingleAssignment from './SingleAssignment';
 const AssignmentMark = () => {
+    const { data: assignmentMark, isLoading, isError } = useGetAssignmentMarkQuery();
+    // decide what to render
+    let content = null;
+
+    if (isLoading) {
+        content = (
+            <>
+                <p>loading...</p>
+            </>
+        );
+    }
+
+    if (!isLoading && isError) {
+        content = <p>There is an error</p>;
+
+    }
+
+    if (!isLoading && !isError && assignmentMark ?.length === 0) {
+        content = <p>There is no assignmentMark</p>;
+    }
+
+    if (!isLoading && !isError && assignmentMark ?.length > 0) {
+        content = assignmentMark.map((assignment) => <SingleAssignment key={assignment.id} assignment={assignment} />)
+
+    }
     return (
         <div>
             <nav className="shadow-md">
@@ -43,43 +70,15 @@ const AssignmentMark = () => {
                                 </thead>
 
                                 <tbody className="divide-y divide-slate-600/50">
-                                    <tr>
-                                        <td className="table-td">Assignment 1 - Implement Debounce Function</td>
-                                        <td className="table-td">10 Mar 2023 10:58:13 PM</td>
-                                        <td className="table-td">Saad Hasan</td>
-                                        <td className="table-td">https://github.com/Learn-with-Sumit/assignment-1</td>
-                                        <td className="table-td input-mark">
-                                            <input max="100" value="100" />
-                                            <svg fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
-                                                className="w-6 h-6 text-green-500 cursor-pointer hover:text-green-400">
-                                                <path stroke-linecap="round" stroke-linejoin="round"
-                                                    d="M4.5 12.75l6 6 9-13.5" />
-                                            </svg>
+                                    {content}
 
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td className="table-td">Assignment 2 - Implement Best Practices</td>
-                                        <td className="table-td">10 Mar 2023 10:58:13 PM</td>
-                                        <td className="table-td">Akash Ahmed</td>
-                                        <td className="table-td">https://github.com/Learn-with-Sumit/assignment-1</td>
-                                        <td className="table-td">50</td>
-                                    </tr>
-                                    <tr>
-                                        <td className="table-td">Assignment 1 - Scoreboard Application</td>
-                                        <td className="table-td">10 Mar 2023 10:58:13 PM</td>
-                                        <td className="table-td">Ferdous</td>
-                                        <td className="table-td">https://github.com/Learn-with-Sumit/assignment-1</td>
-                                        <td className="table-td">100</td>
-                                    </tr>
-
-                                    <tr>
+                                    {/* <tr>
                                         <td className="table-td">Assignment 1 - Scoreboard Application</td>
                                         <td className="table-td">10 Mar 2023 10:58:13 PM</td>
                                         <td className="table-td">Saad Hasan</td>
                                         <td className="table-td">https://github.com/Learn-with-Sumit/assignment-1</td>
                                         <td className="table-td">100</td>
-                                    </tr>
+                                    </tr> */}
                                 </tbody>
                             </table>
                         </div>
