@@ -2,7 +2,34 @@ import React from 'react';
 import logo from "../../learningportal.svg";
 import { Link } from 'react-router-dom';
 import Quizze from './Quizze';
+import { useGetQuizzesQuery } from '../../../features/apiSlice';
 const Quizzes = () => {
+    const { data: quizzes, isLoading, isError } = useGetQuizzesQuery();
+    // decide what to render
+    let content = null;
+
+    if (isLoading) {
+        content = (
+            <>
+                <p>loading...</p>
+            </>
+        );
+    }
+
+    if (!isLoading && isError) {
+        content = <p>There is an error</p>;
+
+    }
+
+    if (!isLoading && !isError && quizzes ?.length === 0) {
+        content = <p>There is no quizzes</p>;
+    }
+
+    if (!isLoading && !isError && quizzes ?.length > 0) {
+        content = quizzes.map((quizze) => <Quizze key={quizze.id} quizze={quizze} />)
+
+    }
+
     return (
         <div>
             <nav className="shadow-md">
@@ -34,14 +61,14 @@ const Quizzes = () => {
                                 <thead>
                                     <tr>
                                         <th className="table-th">Question</th>
-                                        <th className="table-th">Video</th>
+                                        <th className="table-th">quizze</th>
                                         <th className="table-th justify-center">Action</th>
                                     </tr>
                                 </thead>
 
                                 <tbody className="divide-y divide-slate-600/50">
 
-                                    <Quizze />
+                                    {content}
                                 </tbody>
                             </table>
                         </div>
