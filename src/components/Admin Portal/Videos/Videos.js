@@ -1,7 +1,10 @@
 import React from 'react';
 import logo from "../../learningportal.svg";
 import { Link } from 'react-router-dom';
+import { useGetVideosQuery } from '../../../features/apiSlice';
+import Video from './Video';
 const Videos = () => {
+    const { data: videos, isLoading, isError } = useGetVideosQuery();
     return (
         <div>
             <nav className="shadow-md">
@@ -39,7 +42,8 @@ const Videos = () => {
                                 </thead>
 
                                 <tbody className="divide-y divide-slate-600/50">
-                                    <tr>
+                                    {/* <Video /> */}
+                                    {/* <tr>
                                         <td className="table-td">Lesson 4 - Explicit &amp; Union Types - TypeScript Bangla ( বাংলা )
                                     Tutorial Series</td>
                                         <td className="table-td">This is the 4th video of this...</td>
@@ -75,7 +79,7 @@ const Videos = () => {
                                             </svg>
 
                                         </td>
-                                    </tr>
+                                    </tr> */}
 
                                     <tr>
                                         <td className="table-td">#67 JavaScript Bangla Tutorial | JavaScript Object Constructors
