@@ -26,7 +26,7 @@ const DassBoard = () => {
                 <div className="mx-auto max-w-7xl px-5 lg:px-0">
                     <div className="px-3 md:lg:xl:px-40  py-20 bg-opacity-10">
                         <div className="grid grid-cols-1 md:grid-cols-2  gap-6 p-8">
-                            <a href="./Videos.html" className="dashboard-item-card">
+                            <Link to="/Dashboard/videos" className="dashboard-item-card">
                                 <svg fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
                                     className="w-8 h-8 text-yellow-500">
                                     <path stroke-linecap="round"
@@ -35,7 +35,7 @@ const DassBoard = () => {
 
 
                                 <p className="text-slate-200 mt-3 ">Videos</p>
-                            </a>
+                            </Link>
 
                             <Link to="/Dassboard/assignment" className="dashboard-item-card">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
@@ -47,16 +47,16 @@ const DassBoard = () => {
                                 <p className="text-slate-200 mt-3">Assignment</p>
                             </Link>
 
-                            <a href="./Quizzes.html" className="dashboard-item-card">
+                            <Link to="/DashBoard/quizzes" className="dashboard-item-card">
                                 <svg fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
                                     className="w-8 h-8 text-indigo-500">
                                     <path stroke-linecap="round" stroke-linejoin="round"
                                         d="M8.25 6.75h12M8.25 12h12m-12 5.25h12M3.75 6.75h.007v.008H3.75V6.75zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zM3.75 12h.007v.008H3.75V12zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm-.375 5.25h.007v.008H3.75v-.008zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
                                 </svg>
                                 <p className="text-slate-200 mt-3 ">Quizzes</p>
-                            </a>
+                            </Link>
 
-                            <Link to="/Dassboard/assignmentMark" className="dashboard-item-card">
+                            <Link to="/Dashboard/assignmentMark" className="dashboard-item-card">
                                 <svg viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
                                     className="w-8 h-8 text-green-500">
                                     <path stroke-linecap="round" stroke-linejoin="round"
