@@ -37,7 +37,7 @@ const DassBoard = () => {
                                 <p className="text-slate-200 mt-3 ">Videos</p>
                             </a>
 
-                            <a href="./Assignment.html" className="dashboard-item-card">
+                            <Link to="/Dassboard/assignment" className="dashboard-item-card">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                                     stroke="currentColor" className="w-8 h-8 text-red-500">
                                     <path stroke-linecap="round" stroke-linejoin="round"
@@ -45,7 +45,7 @@ const DassBoard = () => {
                                 </svg>
 
                                 <p className="text-slate-200 mt-3">Assignment</p>
-                            </a>
+                            </Link>
 
                             <a href="./Quizzes.html" className="dashboard-item-card">
                                 <svg fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
@@ -56,7 +56,7 @@ const DassBoard = () => {
                                 <p className="text-slate-200 mt-3 ">Quizzes</p>
                             </a>
 
-                            <a href="./AssignmentMark.html" className="dashboard-item-card">
+                            <Link to="/Dassboard/assignmentMark" className="dashboard-item-card">
                                 <svg viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
                                     className="w-8 h-8 text-green-500">
                                     <path stroke-linecap="round" stroke-linejoin="round"
@@ -64,7 +64,7 @@ const DassBoard = () => {
                                 </svg>
 
                                 <p className="text-slate-200 mt-3 ">Assignment Mark</p>
-                            </a>
+                            </Link>
 
                         </div>
                     </div>
