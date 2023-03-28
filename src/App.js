@@ -51,7 +51,12 @@ function App() {
 
           //adminPortal
           <Route exact path='/Dashboard/adminLogin' element={<AdminLogin />} />
-          <Route exact path='/Dashboard/dashboard' element={<DassBoard />} />
+          <Route exact path='/Dashboard/dashboard' element={
+            <PrivateRoute>
+              <DassBoard />
+            </PrivateRoute>
+
+          } />
           <Route exact path='/Dashboard/assignment' element={<Assignment />} />
           <Route exact path='/Dashboard/assignmentMark' element={<AssignmentMark />} />
           <Route exact path='/Dashboard/quizzes' element={<Quizzes />} />
