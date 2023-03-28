@@ -5,6 +5,31 @@ import { useGetVideosQuery } from '../../../features/apiSlice';
 import Video from './Video';
 const Videos = () => {
     const { data: videos, isLoading, isError } = useGetVideosQuery();
+    // decide what to render
+    let content = null;
+
+    if (isLoading) {
+        content = (
+            <>
+                <p>loading...</p>
+            </>
+        );
+    }
+
+    if (!isLoading && isError) {
+        content = <p>There is an error</p>;
+
+    }
+
+    if (!isLoading && !isError && videos ?.length === 0) {
+        content = <p>There is no videos</p>;
+    }
+
+    if (!isLoading && !isError && videos ?.length > 0) {
+        content = videos.map((video) => <Video key={video.id} video={video} />)
+
+    }
+
     return (
         <div>
             <nav className="shadow-md">
@@ -42,9 +67,7 @@ const Videos = () => {
                                 </thead>
 
                                 <tbody className="divide-y divide-slate-600/50">
-                                    <Video />
-                                    <Video />
-                                    <Video />
+                                    {content}
 
 
 
