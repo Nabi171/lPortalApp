@@ -20,6 +20,14 @@ export const apiSlice = createApi({
             keepUnusedDataFor: 600,
             providesTags: ["videos"],
         }),
+        addVideo: builder.mutation({
+            query: (data) => ({
+                url: "/videos",
+                method: "POST",
+                body: data,
+            }),
+            invalidatesTags: ["videos"],
+        }),
         getQuizzes: builder.query({
             query: () => "/quizzes",
             keepUnusedDataFor: 600,
@@ -48,6 +56,7 @@ export const apiSlice = createApi({
 
 export const {
     useGetVideosQuery,
+    useAddVideoMutation,
     useGetQuizzesQuery,
     useGetAssignmentMarkQuery,
     useGetAssignmentsQuery,
