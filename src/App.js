@@ -17,6 +17,7 @@ import useAuthCheck from './hooks/useAuthCheck';
 import PrivateRoute from './components/ui/PrivateRoute';
 import PublicRoute from './components/ui/PublicRoute';
 import AddVideo from './components/Admin Portal/Videos/AddVideo';
+import VideoEdit from './components/Admin Portal/Videos/VideoEdit';
 
 function App() {
   const authChecked = useAuthCheck();
@@ -63,6 +64,7 @@ function App() {
           <Route exact path='/Dashboard/quizzes' element={<Quizzes />} />
           <Route exact path='/Dashboard/videos' element={<Videos />} />
           <Route exact path='/Dashboard/videos/addvideo' element={<AddVideo />} />
+          <Route exact path='/Dashboard/videos/videoEdit/:videoId' element={<VideoEdit />} />
         </Routes>
 
       </BrowserRouter>
