@@ -18,22 +18,55 @@ const AddVideo = () => {
                         <input type="hidden" name="remember" value="true" />
                         <div className="rounded-md shadow-sm -space-y-px">
                             <div >
-                                <label for="video-title" className="sr-only">Video Title</label>
+                                <label for="title" className="sr-only">Video Title</label>
                                 <input
                                     // value={email}
                                     // onChange={(e) => setEmail(e.target.value)}
-                                    id="email-address" name="video-title" type="video-title" autocomplete="email" required
+                                    id="title" name="title" type="text" autocomplete="title" required
                                     className="login-input  rounded-t-md" placeholder="Video Title " />
                             </div>
                             <div>
 
 
                                 <textarea name="" id="" cols="30" rows="7"
-                                    id="email-address" name="video-description"
-                                    autocomplete="video-description" required
+                                    id="description" name="description"
+                                    autocomplete="description" required
                                     className="login-input rounded-t-md" placeholder='Video Description' ></textarea>
                             </div>
-
+                            <div >
+                                <label for="video-url" className="sr-only">Video Url</label>
+                                <input
+                                    // value={email}
+                                    // onChange={(e) => setEmail(e.target.value)}
+                                    id="url" name="url" type="text" autocomplete="url" required
+                                    className="login-input  rounded-t-md" placeholder="Video Url " />
+                            </div>
+                            <div >
+                                <label for="video-Views" className="sr-only">Video Views</label>
+                                <input
+                                    // value={email}
+                                    // onChange={(e) => setEmail(e.target.value)}
+                                    id="views" name="views" type="text" autocomplete="views" required
+                                    className="login-input  rounded-t-md" placeholder="Video views " />
+                            </div>
+                            <div >
+                                <label for="video-duration" className="sr-only">Video Duration</label>
+                                <input
+                                    // value={email}
+                                    // onChange={(e) => setEmail(e.target.value)}
+                                    id="duration" name="duration" type="text" autocomplete="duration" required
+                                    className="login-input  rounded-t-md" placeholder="Video duration " />
+                            </div>
+                            <div >
+                                <label for="createdAt" className="sr-only">Video Created</label>
+                                <input
+                                    // value={email}
+                                    // onChange={(e) => setEmail(e.target.value)}
+                                    id="createdAt" name="createdAt" type="date"
+                                    value="2023-04-15"
+                                    autocomplete="date" required
+                                    className="login-input  rounded-t-md" />
+                            </div>
                         </div>
 
 
