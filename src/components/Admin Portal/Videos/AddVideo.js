@@ -1,68 +1,54 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const AddVideo = () => {
     return (
-        <main className="py-6 2xl:px-6">
-            <div className="container">
-                <div className="p-8 overflow-hidden bg-white shadow-cardShadow rounded-md max-w-xl mx-auto">
-                    <h4 className="mb-8 text-xl font-bold text-center">Add New Book</h4>
-                    <form method="POST" onSubmit={handleSubmit} className="book-form">
-                        <div className="space-y-2">
-                            <label for="lws-bookName">Book Name</label>
-                            <input required className="text-input" type="text"
-                                // value={name}
-                                // onChange={(e) => setName(e.target.value)}
-                                id="lws-bookName" name="name" />
-                        </div>
+        <div>
+            <section className="py-6 bg-primary h-screen grid place-items-center">
+                <div className="mx-auto max-w-md px-5 lg:px-0">
+                    <div>
+                        {/* <Link to='/'> <img className="h-12 mx-auto" /></Link> */}
+                        <h2 className="mt-6 text-center text-3xl font-extrabold text-slate-100">
+                            Add a New Video
+            </h2>
+                    </div>
+                    <form
+                        //  onSubmit={handleSubmit}
+                        className="mt-8 space-y-6" action="#" method="POST" >
+                        <input type="hidden" name="remember" value="true" />
+                        <div className="rounded-md shadow-sm -space-y-px">
+                            <div >
+                                <label for="video-title" className="sr-only">Video Title</label>
+                                <input
+                                    // value={email}
+                                    // onChange={(e) => setEmail(e.target.value)}
+                                    id="email-address" name="video-title" type="video-title" autocomplete="email" required
+                                    className="login-input  rounded-t-md" placeholder="Video Title " />
+                            </div>
+                            <div>
 
-                        <div className="space-y-2">
-                            <label for="lws-author">Author</label>
-                            <input required className="text-input" type="text"
-                                // value={author}
-                                // onChange={(e) => setAuthor(e.target.value)}
-                                id="lws-author" name="author" />
-                        </div>
 
-                        <div className="space-y-2">
-                            <label for="lws-thumbnail">Image Url</label>
-                            <input required className="text-input"
-                                // value={thumbnail}
-                                // onChange={(e) => setThumbnail(e.target.value)}
-                                type="text" id="lws-thumbnail" name="thumbnail" />
-                        </div>
-
-                        <div className="grid grid-cols-2 gap-8 pb-4">
-                            <div className="space-y-2">
-                                <label for="lws-price">Price</label>
-                                <input required className="text-input"
-                                    // value={price}
-                                    // onChange={(e) => setPrice(e.target.value)}
-                                    type="number" id="lws-price" name="price" />
+                                <textarea name="" id="" cols="30" rows="7"
+                                    id="email-address" name="video-description"
+                                    autocomplete="video-description" required
+                                    className="login-input rounded-t-md" placeholder='Video Description' ></textarea>
                             </div>
 
-                            <div className="space-y-2">
-                                <label for="lws-rating">Rating</label>
-                                <input required className="text-input"
-                                    // value={rating}
-                                    // onChange={(e) => setRating(e.target.value)}
-                                    type="number" id="lws-rating" name="rating" min="1"
-                                    max="5" />
-                            </div>
                         </div>
 
-                        <div className="flex items-center">
-                            <input id="lws-featured"
-                                value={featured}
-                                onChange={handleFeature}
-                                type="checkbox" name="featured" className="w-4 h-4" />
-                            <label for="lws-featured" className="ml-2 text-sm"> This is a featured book </label>
-                        </div>
 
-                        <button type="submit" className="submit" id="lws-submit">Add Book</button>
+
+                        <div>
+                            <button type="submit"
+                                className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-violet-600 hover:bg-violet-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-violet-500">
+                                Add Video
+                </button>
+                        </div>
+                        {/* {error !== "" && <p>{error}</p>} */}
                     </form>
                 </div>
-            </div>
-        </main>
+            </section>
+        </div>
     );
 };
 

@@ -1,10 +1,14 @@
 import React from 'react';
 import logo from "../../learningportal.svg";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useGetVideosQuery } from '../../../features/apiSlice';
 import Video from './Video';
 const Videos = () => {
     const { data: videos, isLoading, isError } = useGetVideosQuery();
+    const navigate = useNavigate();
+    const handleGo = () => {
+        navigate('/Dashboard/videos/addvideo')
+    }
     // decide what to render
     let content = null;
 
@@ -54,7 +58,9 @@ const Videos = () => {
                 <div className="mx-auto max-w-full px-5 lg:px-20">
                     <div className="px-3 py-20 bg-opacity-10">
                         <div className="w-full flex">
-                            <button className="btn ml-auto">Add Video</button>
+                            <button
+                                onClick={handleGo}
+                                className="btn ml-auto">Add Video</button>
                         </div>
                         <div className="overflow-x-auto mt-4">
                             <table className="divide-y-1 text-base divide-gray-600 w-full">
