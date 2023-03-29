@@ -24,6 +24,18 @@ export const apiSlice = createApi({
             query: (videoId) => `/videos/${videoId}`,
             providesTags: (result, error, arg) => [{ type: "Video", id: arg }],
         }),
+        editVideo: builder.mutation({
+            query: ({ id, data }) => ({
+                url: `/videos/${id}`,
+                method: "PATCH",
+                body: data,
+            }),
+            invalidatesTags: (result, error, arg) => [
+                "Books",
+                { type: "Video", id: arg.id },
+
+            ],
+        }),
         addVideo: builder.mutation({
             query: (data) => ({
                 url: "/videos",
@@ -69,6 +81,7 @@ export const {
     useGetVideosQuery,
     useGetVideoQuery,
     useAddVideoMutation,
+    useEditVideoMutation,
     useDeleteVideoMutation,
     useGetQuizzesQuery,
     useGetAssignmentMarkQuery,
