@@ -21,7 +21,7 @@ export const apiSlice = createApi({
             providesTags: ["videos"],
         }),
         getVideo: builder.query({
-            query: (videoId) => `/books/${videoId}`,
+            query: (videoId) => `/videos/${videoId}`,
             providesTags: (result, error, arg) => [{ type: "Video", id: arg }],
         }),
         addVideo: builder.mutation({
