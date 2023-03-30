@@ -15,6 +15,7 @@ export const apiSlice = createApi({
     }),
     tagTypes: ["Videos"],
     endpoints: (builder) => ({
+        //handle videos implement
         getVideos: builder.query({
             query: () => "/videos",
             keepUnusedDataFor: 600,
@@ -51,6 +52,7 @@ export const apiSlice = createApi({
             }),
             invalidatesTags: ["videos"],
         }),
+
         getQuizzes: builder.query({
             query: () => "/quizzes",
             keepUnusedDataFor: 600,
@@ -61,11 +63,37 @@ export const apiSlice = createApi({
             keepUnusedDataFor: 600,
             providesTags: ["assignmentMark"],
         }),
+
+        //handle assignment implement
         getAssignments: builder.query({
             query: () => "/assignments",
             keepUnusedDataFor: 600,
             providesTags: ["assignments"],
         }),
+        getAssignment: builder.query({
+            query: (assignmentId) => `/assignments/${assignmentId}`,
+            providesTags: (result, error, arg) => [{ type: "Assignment", id: arg }],
+        }),
+        editAssignment: builder.mutation({
+            query: ({ id, data }) => ({
+                url: `/assignments/${id}`,
+                method: "PATCH",
+                body: data,
+            }),
+            invalidatesTags: (result, error, arg) => [
+                "Books",
+                { type: "Video", id: arg.id },
+
+            ],
+        }),
+        deleteAssignment: builder.mutation({
+            query: (id) => ({
+                url: `/assignments/${id}`,
+                method: "DELETE",
+            }),
+            invalidatesTags: ["assignments"],
+        }),
+
         getUsers: builder.query({
             query: () => "/users",
             keepUnusedDataFor: 600,
@@ -82,10 +110,15 @@ export const {
     useGetVideoQuery,
     useAddVideoMutation,
     useEditVideoMutation,
+
     useDeleteVideoMutation,
     useGetQuizzesQuery,
     useGetAssignmentMarkQuery,
+
     useGetAssignmentsQuery,
+    useGetAssignmentQuery,
+    useEditAssignmentMutation,
+
     useGetUsersQuery,
 
 

@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router';
+import { useEditVideoMutation } from '../../../features/apiSlice';
 
 const FormEdit = ({ video }) => {
+    const navigate = useNavigate();
     const {
         id,
         title: initialTitle,
@@ -11,6 +14,8 @@ const FormEdit = ({ video }) => {
         createdAt: initialCreatedAt,
     } = video;
 
+    const [editVideo, { isLoading, isError, isSuccess }] =
+        useEditVideoMutation();
 
     const [title, setTitle] = useState(initialTitle);
     const [description, setDescription] = useState(initialDescription);
@@ -18,9 +23,28 @@ const FormEdit = ({ video }) => {
     const [views, setViews] = useState(initialViews);
     const [duration, setDuration] = useState(initialDuration);
     const [createdAt, setCreatedAt] = useState(initialCreatedAt);
+
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        editVideo({
+            id,
+            data: {
+                title,
+                description,
+                url,
+                views,
+                duration,
+                createdAt
+            },
+        });
+        navigate('/Dashboard/videos')
+        window.location.reload();
+    };
+
     return (
         <form
-            // onSubmit={handleSubmit}
+            onSubmit={handleSubmit}
             className="mt-8 space-y-6" action="#" method="POST" >
             <input type="hidden" name="remember" value="true" />
             <div className="rounded-md shadow-sm -space-y-px">
