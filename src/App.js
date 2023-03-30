@@ -60,11 +60,12 @@ function App() {
             </PrivateRoute>
 
           } />
-
+          //handle Assignments route
           <Route exact path='/Dashboard/assignment' element={<Assignment />} />
           <Route exact path='/Dashboard/assignment/addAssignment' element={<Addassignment />} />
           <Route exact path='/Dashboard/assignmentMark' element={<AssignmentMark />} />
           <Route exact path='/Dashboard/quizzes' element={<Quizzes />} />
+
           //handle videos route
           <Route exact path='/Dashboard/videos' element={<Videos />} />
           <Route exact path='/Dashboard/videos/addvideo' element={<AddVideo />} />
