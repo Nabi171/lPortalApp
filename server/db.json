@@ -90,12 +90,6 @@
       "video_id": 2,
       "video_title": "#2 JavaScript Tips and Tricks - JavaScript Job Interview Questions",
       "totalMark": 100
-    },
-    {
-      "title": "Make a chat app",
-      "video_title": "chapt.com",
-      "totalMark": "60",
-      "id": 3
     }
   ],
   "quizzes": [
