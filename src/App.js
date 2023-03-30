@@ -19,6 +19,7 @@ import PublicRoute from './components/ui/PublicRoute';
 import AddVideo from './components/Admin Portal/Videos/AddVideo';
 import VideoEdit from './components/Admin Portal/Videos/VideoEdit';
 import Addassignment from './components/Admin Portal/Assignment/Addassignment';
+import EditAssignment from './components/Admin Portal/Assignment/EditAssignment';
 
 function App() {
   const authChecked = useAuthCheck();
@@ -64,6 +65,7 @@ function App() {
           //handle Assignments route
           <Route exact path='/Dashboard/assignment' element={<Assignment />} />
           <Route exact path='/Dashboard/assignment/addAssignment' element={<Addassignment />} />
+          <Route exact path='/Dashboard/assignment/editAssignment/:assignmentId' element={<EditAssignment />} />
 
 
           <Route exact path='/Dashboard/assignmentMark' element={<AssignmentMark />} />
