@@ -74,6 +74,14 @@ export const apiSlice = createApi({
             query: (assignmentId) => `/assignments/${assignmentId}`,
             providesTags: (result, error, arg) => [{ type: "Assignment", id: arg }],
         }),
+        addAssignment: builder.mutation({
+            query: (data) => ({
+                url: "/assignments",
+                method: "POST",
+                body: data,
+            }),
+            invalidatesTags: ["videos"],
+        }),
         editAssignment: builder.mutation({
             query: ({ id, data }) => ({
                 url: `/assignments/${id}`,
@@ -110,14 +118,15 @@ export const {
     useGetVideoQuery,
     useAddVideoMutation,
     useEditVideoMutation,
-
     useDeleteVideoMutation,
+
     useGetQuizzesQuery,
     useGetAssignmentMarkQuery,
 
     useGetAssignmentsQuery,
     useGetAssignmentQuery,
     useEditAssignmentMutation,
+    useDeleteAssignmentMutation,
 
     useGetUsersQuery,
 
