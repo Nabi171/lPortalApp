@@ -16,6 +16,7 @@ const Addassignment = () => {
             totalMark
         });
         navigate('/Dashboard/assignment')
+        window.location.reload();
     };
 
     return (
@@ -51,14 +52,7 @@ const Addassignment = () => {
                                         id="video_title" name="video_title" type="text" autocomplete="video_title" required
                                         className="login-input  rounded-t-md" placeholder="Video Title " />
                                 </div>
-                                <div >
-                                    <label for="video-Views" className="sr-only">Video Views</label>
-                                    <input
-                                        value={views}
-                                        onChange={(e) => setViews(e.target.value)}
-                                        id="views" name="views" type="text" autocomplete="views" required
-                                        className="login-input  rounded-t-md" placeholder="Video views " />
-                                </div>
+
                                 <div >
                                     <label for="video-duration" className="sr-only">Video Duration</label>
                                     <input
