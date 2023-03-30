@@ -15,7 +15,7 @@ export const apiSlice = createApi({
     }),
     tagTypes: ["Videos"],
     endpoints: (builder) => ({
-        //handle videos implement
+        /////////handle videos implement/////////
         getVideos: builder.query({
             query: () => "/videos",
             keepUnusedDataFor: 600,
@@ -64,7 +64,7 @@ export const apiSlice = createApi({
             providesTags: ["assignmentMark"],
         }),
 
-        //handle assignment implement
+        ///////////handle assignment implement////////
         getAssignments: builder.query({
             query: () => "/assignments",
             keepUnusedDataFor: 600,
@@ -125,6 +125,7 @@ export const {
 
     useGetAssignmentsQuery,
     useGetAssignmentQuery,
+    useAddAssignmentMutation,
     useEditAssignmentMutation,
     useDeleteAssignmentMutation,
 
