@@ -1,10 +1,15 @@
 import React from 'react';
 import logo from "../../learningportal.svg";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useGetAssignmentsQuery } from '../../../features/apiSlice';
 import SingleAg from './SingleAg';
 const Assignment = () => {
+    const navigate = useNavigate();
+
     const { data: assignment, isLoading, isError } = useGetAssignmentsQuery();
+    const handleAdd = () => {
+        navigate('/Dashboard/assignment/addAssignment')
+    }
     // decide what to render
     let content = null;
 
