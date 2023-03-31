@@ -2,6 +2,7 @@ import React from 'react';
 
 const Quizze = ({ quizze }) => {
     const { id, question, video_title } = quizze;
+
     return (
         <tr>
             <td className="table-td">Quiz {id} - JavaScript Interview Questions</td>
