@@ -75,6 +75,7 @@ export const apiSlice = createApi({
             ],
         }),
 
+        /////////handle AssignmentMark implement/////////
         getAssignmentMark: builder.query({
             query: () => "/assignmentMark",
             keepUnusedDataFor: 600,
