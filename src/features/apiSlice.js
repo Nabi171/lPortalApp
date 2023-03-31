@@ -63,6 +63,17 @@ export const apiSlice = createApi({
             query: (quizzeId) => `/quizzes/${quizzeId}`,
             providesTags: (result, error, arg) => [{ type: "Quizze", id: arg }],
         }),
+        editQuizze: builder.mutation({
+            query: ({ id, data }) => ({
+                url: `/quizzes/${id}`,
+                method: "PATCH",
+                body: data,
+            }),
+            invalidatesTags: (result, error, arg) => [
+                "Quizzes",
+                { type: "Quizze", id: arg.id },
+            ],
+        }),
 
         getAssignmentMark: builder.query({
             query: () => "/assignmentMark",
