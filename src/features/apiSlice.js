@@ -59,6 +59,10 @@ export const apiSlice = createApi({
             keepUnusedDataFor: 600,
             providesTags: ["quizzes"],
         }),
+        getQuizze: builder.query({
+            query: (quizzeId) => `/quizzes/${quizzeId}`,
+            providesTags: (result, error, arg) => [{ type: "Quizze", id: arg }],
+        }),
 
         getAssignmentMark: builder.query({
             query: () => "/assignmentMark",
