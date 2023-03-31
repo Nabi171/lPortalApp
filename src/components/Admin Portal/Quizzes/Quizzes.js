@@ -1,10 +1,14 @@
 import React from 'react';
 import logo from "../../learningportal.svg";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Quizze from './Quizze';
 import { useGetQuizzesQuery } from '../../../features/apiSlice';
 const Quizzes = () => {
     const { data: quizzes, isLoading, isError } = useGetQuizzesQuery();
+    const navigate = useNavigate();
+    const handleAdd = () => {
+        navigate('/Dashboard/quizzes/addQuizze')
+    }
     // decide what to render
     let content = null;
 
