@@ -155,7 +155,7 @@ export const {
 
     useGetQuizzesQuery,
     useGetQuizzeQuery,
-    // useAddVideoMutation,
+    useAddQuizzeMutation,
 
 
     useGetAssignmentMarkQuery,
