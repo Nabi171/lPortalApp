@@ -15,7 +15,7 @@ import Quizzes from './components/Admin Portal/Quizzes/Quizzes';
 import Videos from './components/Admin Portal/Videos/Videos';
 import useAuthCheck from './hooks/useAuthCheck';
 import PrivateRoute from './components/ui/PrivateRoute';
-import PublicRoute from './components/ui/PublicRoute';
+// import PublicRoute from './components/ui/PublicRoute';
 import AddVideo from './components/Admin Portal/Videos/AddVideo';
 import VideoEdit from './components/Admin Portal/Videos/VideoEdit';
 import Addassignment from './components/Admin Portal/Assignment/Addassignment';
