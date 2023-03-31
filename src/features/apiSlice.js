@@ -154,6 +154,10 @@ export const {
     useDeleteVideoMutation,
 
     useGetQuizzesQuery,
+    useGetQuizzeQuery,
+    // useAddVideoMutation,
+
+
     useGetAssignmentMarkQuery,
 
     useGetAssignmentsQuery,
