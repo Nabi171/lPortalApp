@@ -69,6 +69,8 @@ function App() {
 
 
           <Route exact path='/Dashboard/assignmentMark' element={<AssignmentMark />} />
+
+          //handle quizzes route
           <Route exact path='/Dashboard/quizzes' element={<Quizzes />} />
 
           //handle videos route
