@@ -156,6 +156,8 @@ export const {
     useGetQuizzesQuery,
     useGetQuizzeQuery,
     useAddQuizzeMutation,
+    useEditQuizzeMutation,
+    useDeleteQuizzeMutation,
 
 
     useGetAssignmentMarkQuery,
