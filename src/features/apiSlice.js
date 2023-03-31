@@ -74,6 +74,21 @@ export const apiSlice = createApi({
                 { type: "Quizze", id: arg.id },
             ],
         }),
+        addQuizze: builder.mutation({
+            query: (data) => ({
+                url: "/quizzes",
+                method: "POST",
+                body: data,
+            }),
+            invalidatesTags: ["quizzes"],
+        }),
+        deleteQuizze: builder.mutation({
+            query: (id) => ({
+                url: `/quizzes/${id}`,
+                method: "DELETE",
+            }),
+            invalidatesTags: ["quizzes"],
+        }),
 
         /////////handle AssignmentMark implement/////////
         getAssignmentMark: builder.query({
