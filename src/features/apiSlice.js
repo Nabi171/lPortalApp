@@ -53,11 +53,13 @@ export const apiSlice = createApi({
             invalidatesTags: ["videos"],
         }),
 
+        /////////handle Quizzes implement/////////
         getQuizzes: builder.query({
             query: () => "/quizzes",
             keepUnusedDataFor: 600,
             providesTags: ["quizzes"],
         }),
+
         getAssignmentMark: builder.query({
             query: () => "/assignmentMark",
             keepUnusedDataFor: 600,
