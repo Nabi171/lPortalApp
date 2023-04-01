@@ -4,12 +4,15 @@ const AddQuizze = () => {
     const [question, setQuestion] = useState("");
     const [video_title, setVideoTitle] = useState("");
     const [options, SetOptions] = useState({
-        option: "",
+        option1: "",
+        option2: "",
+        option3: "",
+        option4: "",
         isCorrect: true
     });
     const handleOption = (e) => {
-        const { option, value } = e.target;
-        SetOptions((prevFormData) => ({ ...prevFormData, [option]: value }))
+        const { name, value } = e.target;
+        SetOptions((prevFormData) => ({ ...prevFormData, [name]: value }))
         // setName(e.target.value)
     }
     // const navigate = useNavigate();
@@ -62,10 +65,19 @@ const AddQuizze = () => {
                             <div >
                                 <label for="video-duration" className="sr-only">Quizze Option</label>
                                 <input
-                                    value={options.option}
+                                    value={options.name}
                                     onChange={handleOption}
-                                    id="totalMark" name="option" type="text" autocomplete="totakMark" required
-                                    className="login-input  rounded-t-md" placeholder="Total Mark" />
+                                    id="totalMark" name="option1" type="text" autocomplete="totakMark" required
+                                    className="login-input  rounded-t-md" placeholder="option a" />
+                            </div>
+
+                            <div >
+                                <label for="video-duration" className="sr-only">Quizze Option</label>
+                                <input
+                                    value={options.name}
+                                    onChange={handleOption}
+                                    id="totalMark" name="option2" type="text" autocomplete="totakMark" required
+                                    className="login-input  rounded-t-md" placeholder="option b" />
                             </div>
 
                         </div>
