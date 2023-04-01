@@ -67,7 +67,7 @@ const AddQuizze = () => {
                                 <input
                                     value={options.name}
                                     onChange={handleOption}
-                                    id="totalMark" name="option1" type="text" autocomplete="totakMark" required
+                                    id="totalMark" name="option1" type="text" required
                                     className="login-input  rounded-t-md" placeholder="option a" />
                             </div>
 
@@ -76,8 +76,26 @@ const AddQuizze = () => {
                                 <input
                                     value={options.name}
                                     onChange={handleOption}
-                                    id="totalMark" name="option2" type="text" autocomplete="totakMark" required
+                                    id="totalMark" name="option2" type="text" required
                                     className="login-input  rounded-t-md" placeholder="option b" />
+                            </div>
+
+                            <div >
+                                <label for="video-duration" className="sr-only">Quizze Option</label>
+                                <input
+                                    value={options.name}
+                                    onChange={handleOption}
+                                    id="totalMark" name="option3" type="text" required
+                                    className="login-input  rounded-t-md" placeholder="option c" />
+                            </div>
+
+                            <div >
+                                <label for="video-duration" className="sr-only">Quizze Option</label>
+                                <input
+                                    value={options.name}
+                                    onChange={handleOption}
+                                    id="totalMark" name="option4" type="text" required
+                                    className="login-input  rounded-t-md" placeholder="option d" />
                             </div>
 
                         </div>
