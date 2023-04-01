@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
+import { useAddQuizzeMutation } from '../../../features/apiSlice';
+import { useNavigate } from 'react-router';
 
 const AddQuizze = () => {
+    const [addQuizze, { isLoading, isSuccess, isError }] = useAddQuizzeMutation();
     const [question, setQuestion] = useState("");
     const [video_title, setVideoTitle] = useState("");
     const [options, SetOptions] = useState({
@@ -15,19 +18,19 @@ const AddQuizze = () => {
         SetOptions((prevFormData) => ({ ...prevFormData, [name]: value }))
         // setName(e.target.value)
     }
-    // const navigate = useNavigate();
+    const navigate = useNavigate();
     const handleSubmit = (e) => {
         e.preventDefault();
-        // addAssignment({
-        //     title,
-        //     video_title,
-        //     totalMark
-        // });
-        // navigate('/Dashboard/assignment')
+        addQuizze({
+            question,
+            video_title,
+            options
+        });
+        navigate('/Dashboard/quizzes')
 
         console.log(question, video_title, options)
 
-        // window.location.reload();
+        window.location.reload();
     };
     return (
         <div>
