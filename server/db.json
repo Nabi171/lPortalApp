@@ -178,18 +178,6 @@
       ]
     },
     {
-      "question": "what is ",
-      "video_title": "test",
-      "options": {
-        "option1": "a",
-        "option2": "c",
-        "option3": "b",
-        "option4": "f",
-        "isCorrect": true
-      },
-      "id": 4
-    },
-    {
       "question": "hi how are you",
       "video_title": "no rfeskllsdakf",
       "options": {

@@ -1,9 +1,9 @@
 import React from 'react';
-import { useDeleteVideoMutation } from '../../../features/apiSlice';
+import { useDeleteQuizzeMutation } from '../../../features/apiSlice';
 
 const Quizze = ({ quizze }) => {
     const { id, question, video_title } = quizze;
-    const [deleteQuizze, { isSuccess, isLoading, isError }] = useDeleteVideoMutation();
+    const [deleteQuizze, { isSuccess, isLoading, isError }] = useDeleteQuizzeMutation();
     const handleDelete = () => {
         deleteQuizze(id);
         window.location.reload();
@@ -14,7 +14,7 @@ const Quizze = ({ quizze }) => {
             <td className="table-td">{video_title}...</td>
             <td className="table-td flex gap-x-2 justify-center">
                 <svg
-
+                    onClick={handleDelete}
                     fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
                     className="w-6 h-6 hover:text-red-500 cursor-pointer transition-all">
                     <path stroke-linecap="round" stroke-linejoin="round"
