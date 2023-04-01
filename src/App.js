@@ -21,6 +21,7 @@ import VideoEdit from './components/Admin Portal/Videos/VideoEdit';
 import Addassignment from './components/Admin Portal/Assignment/Addassignment';
 import EditAssignment from './components/Admin Portal/Assignment/EditAssignment';
 import AddQuizze from './components/Admin Portal/Quizzes/AddQuizze';
+import EditQuiz from './components/Admin Portal/Quizzes/EditQuiz';
 
 function App() {
   const authChecked = useAuthCheck();
@@ -74,6 +75,8 @@ function App() {
           //handle quizzes route
           <Route exact path='/Dashboard/quizzes' element={<Quizzes />} />
           <Route exact path='/Dashboard/quizzes/addQuizze' element={<AddQuizze />} />
+          <Route exact path='/Dashboard/quizzes/editquizze/:quizzeId' element={<EditQuiz />} />
+
 
           //handle videos route
           <Route exact path='/Dashboard/videos' element={<Videos />} />
