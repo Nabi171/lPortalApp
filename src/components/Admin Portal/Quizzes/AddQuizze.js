@@ -3,10 +3,15 @@ import React, { useState } from 'react';
 const AddQuizze = () => {
     const [question, setQuestion] = useState("");
     const [video_title, setVideoTitle] = useState("");
-    const [totalMark, SetTotalMark] = useState({
+    const [options, SetOptions] = useState({
         option: "",
         isCorrect: true
     });
+    const handleOption = (e) => {
+        const { option, value } = e.target;
+        SetOptions((prevFormData) => ({ ...prevFormData, [option]: value }))
+        // setName(e.target.value)
+    }
     // const navigate = useNavigate();
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -17,7 +22,7 @@ const AddQuizze = () => {
         // });
         // navigate('/Dashboard/assignment')
 
-
+        console.log(question, video_title, options)
 
         // window.location.reload();
     };
@@ -46,7 +51,7 @@ const AddQuizze = () => {
                             </div>
 
                             <div >
-                                <label for="video-url" className="sr-only">Video Url</label>
+                                <label for="video-url" className="sr-only">Video Title</label>
                                 <input
                                     value={video_title}
                                     onChange={(e) => setVideoTitle(e.target.value)}
@@ -55,11 +60,11 @@ const AddQuizze = () => {
                             </div>
 
                             <div >
-                                <label for="video-duration" className="sr-only">Video Duration</label>
+                                <label for="video-duration" className="sr-only">Quizze Option</label>
                                 <input
-                                    // value={totalMark}
-                                    // onChange={(e) => SetTotalMark(e.target.value)}
-                                    id="totalMark" name="totalMark" type="text" autocomplete="totakMark" required
+                                    value={options.option}
+                                    onChange={handleOption}
+                                    id="totalMark" name="option" type="text" autocomplete="totakMark" required
                                     className="login-input  rounded-t-md" placeholder="Total Mark" />
                             </div>
 
@@ -70,7 +75,7 @@ const AddQuizze = () => {
                         <div>
                             <button type="submit"
                                 className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-violet-600 hover:bg-violet-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-violet-500">
-                                Add Assignment
+                                Add Quizze
         </button>
                         </div>
                         {/* {error !== "" && <p>{error}</p>} */}
