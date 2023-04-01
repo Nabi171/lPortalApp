@@ -1,6 +1,26 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const AddQuizze = () => {
+    const [question, setQuestion] = useState("");
+    const [video_title, setVideoTitle] = useState("");
+    const [totalMark, SetTotalMark] = useState({
+        option: "",
+        isCorrect: true
+    });
+    // const navigate = useNavigate();
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        // addAssignment({
+        //     title,
+        //     video_title,
+        //     totalMark
+        // });
+        // navigate('/Dashboard/assignment')
+
+
+
+        // window.location.reload();
+    };
     return (
         <div>
             <section className="py-6 bg-primary h-screen grid place-items-center">
@@ -8,28 +28,28 @@ const AddQuizze = () => {
                     <div>
                         {/* <Link to='/'> <img className="h-12 mx-auto" /></Link> */}
                         <h2 className="mt-6 text-center text-3xl font-extrabold text-slate-100">
-                            Add a New Assignment
+                            Add a New Quizze Portion
     </h2>
                     </div>
                     <form
-                        // onSubmit={handleSubmit}
+                        onSubmit={handleSubmit}
                         className="mt-8 space-y-6" action="#" method="POST" >
                         <input type="hidden" name="remember" value="true" />
                         <div className="rounded-md shadow-sm -space-y-px">
                             <div >
-                                <label for="title" className="sr-only">Video Title</label>
+                                <label for="title" className="sr-only">Question</label>
                                 <input
-                                    // value={title}
-                                    // onChange={(e) => setTitle(e.target.value)}
-                                    id="title" name="title" type="text" autocomplete="title" required
-                                    className="login-input  rounded-t-md" placeholder="Assignment Title " />
+                                    value={question}
+                                    onChange={(e) => setQuestion(e.target.value)}
+                                    id="question" name="question" type="question" autocomplete="question" required
+                                    className="login-input  rounded-t-md" placeholder="Question " />
                             </div>
 
                             <div >
                                 <label for="video-url" className="sr-only">Video Url</label>
                                 <input
-                                    // value={video_title}
-                                    // onChange={(e) => setVideoTitle(e.target.value)}
+                                    value={video_title}
+                                    onChange={(e) => setVideoTitle(e.target.value)}
                                     id="video_title" name="video_title" type="text" autocomplete="video_title" required
                                     className="login-input  rounded-t-md" placeholder="Video Title " />
                             </div>
