@@ -24,12 +24,9 @@ const EditForm = ({ quizze }) => {
         editQuizze({
             id,
             data: {
-                title,
-                description,
-                url,
-                views,
-                duration,
-                createdAt
+                question,
+                video_title,
+
             },
         });
         navigate('/Dashboard/quizzes')

@@ -95,9 +95,9 @@
   "quizzes": [
     {
       "id": 1,
-      "question": "What is a Debounce function in JavaScript?",
+      "question": "What is a async function in JavaScript?",
       "video_id": 1,
-      "video_title": "Debounce Function in JavaScript - JavaScript Job Interview question",
+      "video_title": "Async Debounce Function in JavaScript - JavaScript Job Interview question",
       "options": [
         {
           "id": "1",
@@ -178,8 +178,8 @@
       ]
     },
     {
-      "question": "hi how are you",
-      "video_title": "no rfeskllsdakf",
+      "question": "what is debounce function?",
+      "video_title": "debounce function in js",
       "options": {
         "option1": "as",
         "option2": "sd",
