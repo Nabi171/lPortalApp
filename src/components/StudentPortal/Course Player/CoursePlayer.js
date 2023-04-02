@@ -5,6 +5,7 @@ import { userLoggedOut } from '../../../features/auth/authSlice';
 import { useDispatch } from 'react-redux';
 import { useGetUserQuery, useGetVideosQuery } from '../../../features/apiSlice';
 import SidePlayer from './SidePlayer';
+import Player from './Player';
 const CoursePlayer = () => {
     const { data: videos, isLoading, isError } = useGetVideosQuery();
 
@@ -67,7 +68,7 @@ const CoursePlayer = () => {
             <section className="py-6 bg-primary">
                 <div className="mx-auto max-w-7xl px-5 lg:px-0">
                     <div className="grid grid-cols-3 gap-2 lg:gap-8">
-
+                        <Player />
                         <div
                             className="col-span-full lg:col-auto max-h-[570px] overflow-y-auto bg-secondary p-4 rounded-md border border-slate-50/10 divide-y divide-slate-600/30">
                             {/* <SidePlayer /> */}

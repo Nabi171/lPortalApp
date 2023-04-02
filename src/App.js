@@ -22,6 +22,7 @@ import Addassignment from './components/Admin Portal/Assignment/Addassignment';
 import EditAssignment from './components/Admin Portal/Assignment/EditAssignment';
 import AddQuizze from './components/Admin Portal/Quizzes/AddQuizze';
 import EditQuiz from './components/Admin Portal/Quizzes/EditQuiz';
+import Player from './components/StudentPortal/Course Player/Player';
 
 function App() {
   const authChecked = useAuthCheck();
@@ -49,6 +50,7 @@ function App() {
 
           } />
 
+          <Route exact path='/StudentPortal/videos/:svideoId' element={<Player />} />
 
           <Route exact path='/StudentPortal/StudentReistration' element={<Resigtration />} />
 
