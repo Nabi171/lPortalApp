@@ -1,11 +1,13 @@
 import React from 'react';
 import logo from "../../learningportal.svg";
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { userLoggedOut } from '../../../features/auth/authSlice';
 import { useDispatch } from 'react-redux';
-// import { useGetUserQuery } from '../../../features/apiSlice';
+import { useGetUserQuery } from '../../../features/apiSlice';
 const CoursePlayer = () => {
-    // const user = useGetUserQuery();
+    // const { userId } = useParams();
+    // const user = useGetUserQuery(userId);
+    // const user = userLoggedIn();
     // console.log(user)
     const dispatch = useDispatch();
 
