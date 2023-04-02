@@ -1,10 +1,19 @@
 import React from 'react';
 import { useGetVideoQuery } from '../../../features/apiSlice';
+import logo from "../../learningportal.svg";
 import { useParams } from 'react-router';
 import PlayerTwo from './PlayerTwo';
 import { Link } from 'react-router-dom';
+import { userLoggedOut } from '../../../features/auth/authSlice';
+import { useDispatch } from 'react-redux';
 
 const Player = () => {
+    const dispatch = useDispatch();
+
+    const logout = () => {
+        dispatch(userLoggedOut());
+        localStorage.clear();
+    };
     const { svideoId } = useParams();
 
     const { data: video, isLoading, isError } = useGetVideoQuery(svideoId);
@@ -16,14 +25,14 @@ const Player = () => {
                 <div className="max-w-7xl px-5 lg:px-0 mx-auto flex justify-between py-3">
                     <Link to='/'><img className="h-10"
 
-                    // src={logo}
+                        src={logo}
 
                     /></Link>
                     <div className="flex items-center gap-3">
                         <a href="./Leaderboard.html">Leaderboard</a>
                         <h2 className="font-bold">Saad Hasan</h2>
                         <button
-                            // onClick={logout}
+                            onClick={logout}
                             className="flex gap-2 border border-cyan items-center px-4 py-1 rounded-full text-sm transition-all hover:bg-cyan ">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                                 stroke="currentColor" className="w-6 h-6">
@@ -44,11 +53,21 @@ const Player = () => {
 
 
                         <div className="col-span-full w-full space-y-8 lg:col-span-2">
-                            <iframe width="100%" className="aspect-video" src="https://www.youtube.com/embed/56zUkaXJnUA"
-                                title="Things I wish I knew as a Junior Web Developer - Sumit Saha - BASIS SoftExpo 2023"
-                                frameborder="0"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                allowfullscreen></iframe>
+                            {video ?
+
+                                <iframe width="100%" className="aspect-video" src={video.url}
+                                    title="Things I wish I knew as a Junior Web Developer - Sumit Saha - BASIS SoftExpo 2023"
+                                    frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen></iframe>
+
+                                :
+                                <iframe width="100%" className="aspect-video" src="https://www.youtube.com/embed/56zUkaXJnUA"
+                                    title="Things I wish I knew as a Junior Web Developer - Sumit Saha - BASIS SoftExpo 2023"
+                                    frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen></iframe>
+                            }
 
                             <div>
                                 {
@@ -56,9 +75,14 @@ const Player = () => {
                                         {video.title}
                                     </h1> : <>Things I wish i knew as a junior web Developer-Basis SoftExpo</>
                                 }
-                                <h2 className=" pb-4 text-sm leading-[1.7142857] text-slate-400">
-                                    Uploaded on 23 February
-        2020</h2>
+                                {
+                                    video ? <h2 className=" pb-4 text-sm leading-[1.7142857] text-slate-400">
+                                        Uploaded on {video.createdAt}
+                                        2020</h2> :
+                                        <h2 className=" pb-4 text-sm leading-[1.7142857] text-slate-400">
+                                            Uploaded on 23 February
+2020</h2>
+                                }
 
                                 <div className="flex gap-4">
                                     <a href="#"

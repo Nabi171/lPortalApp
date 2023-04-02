@@ -17,7 +17,7 @@ const Login = () => {
             setError(responseError.data);
         }
         if (data ?.accessToken && data ?.user) {
-            navigate("/StudentPortal/Course Player");
+            navigate("/StudentPortal/videos/:svideoId");
         }
     }, [data, responseError, navigate]);
 
