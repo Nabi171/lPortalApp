@@ -4,9 +4,10 @@ import { useParams } from 'react-router';
 
 const Player = () => {
     const { svideoId } = useParams();
-    console.log(svideoId)
-    const { data: video, isLoading, isError } = useGetVideoQuery(1);
-    // console.log(video)
+    // console.log(svideoId)
+    const { data: video, isLoading, isError } = useGetVideoQuery(svideoId);
+    // const { url } = video;
+    console.log(video)
     return (
         <div className="col-span-full w-full space-y-8 lg:col-span-2">
             <iframe width="100%" className="aspect-video" src="https://www.youtube.com/embed/56zUkaXJnUA"
