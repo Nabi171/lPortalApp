@@ -1,4 +1,5 @@
 import React from 'react';
+import EditForm from './EditForm';
 
 const EditQuiz = () => {
     return (
@@ -13,7 +14,7 @@ const EditQuiz = () => {
             </h2>
                         </div>
                         {/* <FormEdit /> */}
-
+                        <EditForm />
                     </div>
                 </section>
             </div>
