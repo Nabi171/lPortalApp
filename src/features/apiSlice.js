@@ -175,6 +175,7 @@ export const {
     useDeleteAssignmentMutation,
 
     useGetUsersQuery,
+    useGetUserQuery,
 
 
 } = apiSlice;

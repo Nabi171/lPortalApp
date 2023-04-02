@@ -3,7 +3,10 @@ import logo from "../../learningportal.svg";
 import { Link } from 'react-router-dom';
 import { userLoggedOut } from '../../../features/auth/authSlice';
 import { useDispatch } from 'react-redux';
+// import { useGetUserQuery } from '../../../features/apiSlice';
 const CoursePlayer = () => {
+    // const user = useGetUserQuery();
+    // console.log(user)
     const dispatch = useDispatch();
 
     const logout = () => {
