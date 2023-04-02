@@ -43,14 +43,20 @@ function App() {
 
           } />
 
-          <Route exact path='/StudentPortal/Course Player' element={
+          {/* <Route exact path='/StudentPortal/Course Player' element={
             <PrivateRoute>
               <CoursePlayer />
             </PrivateRoute>
 
+          } /> */}
+          <Route exact path='/StudentPortal/videos/:svideoId' element={
+            <PrivateRoute>
+              <Player />
+            </PrivateRoute>
+
           } />
 
-          <Route exact path='/StudentPortal/videos/:svideoId' element={<Player />} />
+          {/* <Route exact path='/StudentPortal/videos/:svideoId' element={<Player />} /> */}
 
           <Route exact path='/StudentPortal/StudentReistration' element={<Resigtration />} />
 

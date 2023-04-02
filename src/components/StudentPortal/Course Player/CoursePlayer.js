@@ -1,10 +1,8 @@
 import React from 'react';
 import logo from "../../learningportal.svg";
-import { Link, useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { userLoggedOut } from '../../../features/auth/authSlice';
 import { useDispatch } from 'react-redux';
-import { useGetUserQuery, useGetVideosQuery } from '../../../features/apiSlice';
-import SidePlayer from './SidePlayer';
 import Player from './Player';
 import PlayerTwo from './PlayerTwo';
 const CoursePlayer = () => {
@@ -17,7 +15,7 @@ const CoursePlayer = () => {
     };
     return (
         <div>
-            <nav className="shadow-md">
+            {/* <nav className="shadow-md">
                 <div className="max-w-7xl px-5 lg:px-0 mx-auto flex justify-between py-3">
                     <Link to='/'><img className="h-10" src={logo} /></Link>
                     <div className="flex items-center gap-3">
@@ -45,7 +43,8 @@ const CoursePlayer = () => {
 
                     </div>
                 </div>
-            </section>
+            </section> */}
+            <Player />
 
         </div >
     );
