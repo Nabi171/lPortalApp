@@ -143,7 +143,7 @@ export const apiSlice = createApi({
             providesTags: ["users"],
         }),
         getUser: builder.query({
-            query: (userId) => `//${userId}`,
+            query: (userId) => `/users/${userId}`,
             providesTags: (result, error, arg) => [{ type: "User", id: arg }],
         }),
 
