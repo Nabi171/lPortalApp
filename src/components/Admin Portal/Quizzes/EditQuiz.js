@@ -1,7 +1,23 @@
 import React from 'react';
 import EditForm from './EditForm';
+import { useParams } from 'react-router';
+import { useGetQuizzeQuery } from '../../../features/apiSlice';
 
 const EditQuiz = () => {
+    const { quizzeId } = useParams();
+    const { data: quizze, isLoading, isError } = useGetQuizzeQuery(quizzeId);
+
+    let content = null;
+
+    if (isLoading) {
+        content = <div>Loading...</div>;
+    }
+    if (!isLoading && isError) {
+        content = <div>error...</div>;
+    }
+    if (!isLoading && !isError && quizze ?.id) {
+        content = <EditForm quizze={quizze} />;
+    }
     return (
         <div>
             <div>
@@ -14,7 +30,8 @@ const EditQuiz = () => {
             </h2>
                         </div>
                         {/* <FormEdit /> */}
-                        <EditForm />
+                        {/* <EditForm /> */}
+                        {content}
                     </div>
                 </section>
             </div>

@@ -9,58 +9,59 @@ const EditForm = () => {
             <input type="hidden" name="remember" value="true" />
             <div className="rounded-md shadow-sm -space-y-px">
                 <div >
-                    <label for="title" className="sr-only">Video Title</label>
+                    <label for="title" className="sr-only">Question</label>
                     <input
-                        // value={title}
-                        // onChange={(e) => setTitle(e.target.value)}
-                        id="title" name="title" type="text" autocomplete="title" required
+                        // value={question}
+                        // onChange={(e) => setQuestion(e.target.value)}
+                        id="question" name="question" type="question" autocomplete="question" required
+                        className="login-input  rounded-t-md" placeholder="Question " />
+                </div>
+
+                <div >
+                    <label for="video-url" className="sr-only">Video Title</label>
+                    <input
+                        // value={video_title}
+                        // onChange={(e) => setVideoTitle(e.target.value)}
+                        id="video_title" name="video_title" type="text" autocomplete="video_title" required
                         className="login-input  rounded-t-md" placeholder="Video Title " />
                 </div>
-                <div>
 
+                <div >
+                    <label for="video-duration" className="sr-only">Quizze Option</label>
+                    <input
+                        // value={options.name}
+                        // onChange={handleOption}
+                        id="totalMark" name="option1" type="text" required
+                        className="login-input  rounded-t-md" placeholder="option a" />
+                </div>
 
-                    <textarea
-                        // value={description}
-                        // onChange={(e) => setDescription(e.target.value)}
-                        name="" id="" cols="30" rows="7"
-                        id="description" name="description"
-                        autocomplete="description" required
-                        className="login-input rounded-t-md" placeholder='Video Description' ></textarea>
-                </div>
                 <div >
-                    <label for="video-url" className="sr-only">Video Url</label>
+                    <label for="video-duration" className="sr-only">Quizze Option</label>
                     <input
-                        // value={url}
-                        // onChange={(e) => setUrl(e.target.value)}
-                        id="url" name="url" type="text" autocomplete="url" required
-                        className="login-input  rounded-t-md" placeholder="Video Url " />
+                        // value={options.name}
+                        // onChange={handleOption}
+                        id="totalMark" name="option2" type="text" required
+                        className="login-input  rounded-t-md" placeholder="option b" />
                 </div>
+
                 <div >
-                    <label for="video-Views" className="sr-only">Video Views</label>
+                    <label for="video-duration" className="sr-only">Quizze Option</label>
                     <input
-                        // value={views}
-                        // onChange={(e) => setViews(e.target.value)}
-                        id="views" name="views" type="text" autocomplete="views" required
-                        className="login-input  rounded-t-md" placeholder="Video views " />
+                        // value={options.name}
+                        // onChange={handleOption}
+                        id="totalMark" name="option3" type="text" required
+                        className="login-input  rounded-t-md" placeholder="option c" />
                 </div>
+
                 <div >
-                    <label for="video-duration" className="sr-only">Video Duration</label>
+                    <label for="video-duration" className="sr-only">Quizze Option</label>
                     <input
-                        // value={duration}
-                        // onChange={(e) => setDuration(e.target.value)}
-                        id="duration" name="duration" type="text" autocomplete="duration" required
-                        className="login-input  rounded-t-md" placeholder="Video duration " />
+                        // value={options.name}
+                        // onChange={handleOption}
+                        id="totalMark" name="option4" type="text" required
+                        className="login-input  rounded-t-md" placeholder="option d" />
                 </div>
-                <div >
-                    <label for="createdAt" className="sr-only">Video Created</label>
-                    <input
-                        // value={createdAt}
-                        // onChange={(e) => setCreatedAt(e.target.value)}
-                        id="createdAt" name="createdAt" type="date"
-                        value="2023-04-15"
-                        autocomplete="date" required
-                        className="login-input  rounded-t-md" />
-                </div>
+
             </div>
 
 
@@ -68,7 +69,7 @@ const EditForm = () => {
             <div>
                 <button type="submit"
                     className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-violet-600 hover:bg-violet-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-violet-500">
-                    Update
+                    Add Quizze
 </button>
             </div>
             {/* {error !== "" && <p>{error}</p>} */}
