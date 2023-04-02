@@ -3,9 +3,35 @@ import logo from "../../learningportal.svg";
 import { Link, useParams } from 'react-router-dom';
 import { userLoggedOut } from '../../../features/auth/authSlice';
 import { useDispatch } from 'react-redux';
-import { useGetUserQuery } from '../../../features/apiSlice';
+import { useGetUserQuery, useGetVideosQuery } from '../../../features/apiSlice';
 import SidePlayer from './SidePlayer';
 const CoursePlayer = () => {
+    const { data: videos, isLoading, isError } = useGetVideosQuery();
+
+    // decide what to render
+    let content = null;
+
+    if (isLoading) {
+        content = (
+            <>
+                <p>loading...</p>
+            </>
+        );
+    }
+
+    if (!isLoading && isError) {
+        content = <p>There is an error</p>;
+
+    }
+
+    if (!isLoading && !isError && videos ?.length === 0) {
+        content = <p>There is no videos</p>;
+    }
+
+    if (!isLoading && !isError && videos ?.length > 0) {
+        content = videos.map((video) => <SidePlayer key={video.id} video={video} />)
+
+    }
     // const { userId } = useParams();
     // const user = useGetUserQuery(userId);
     // const user = userLoggedIn();
@@ -84,7 +110,9 @@ const CoursePlayer = () => {
 
                         <div
                             className="col-span-full lg:col-auto max-h-[570px] overflow-y-auto bg-secondary p-4 rounded-md border border-slate-50/10 divide-y divide-slate-600/30">
-                            <SidePlayer />
+                            {/* <SidePlayer /> */}
+                            {content}
+
 
                         </div>
 
