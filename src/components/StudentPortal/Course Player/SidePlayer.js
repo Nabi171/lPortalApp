@@ -2,9 +2,9 @@ import React from 'react';
 
 const SidePlayer = () => {
     return (
-        <div
-            className="col-span-full lg:col-auto max-h-[570px] overflow-y-auto bg-secondary p-4 rounded-md border border-slate-50/10 divide-y divide-slate-600/30">
 
+
+        <div>
             <div className="w-full flex flex-row gap-2 cursor-pointer hover:bg-slate-900 p-2 py-3">
 
                 <svg fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-6 h-6">
@@ -17,7 +17,7 @@ const SidePlayer = () => {
                 <div clas="flex flex-col w-full">
                     <a href="#">
                         <p className="text-slate-50 text-sm font-medium">Things I wish I knew as a Junior Web
-                Developer - Sumit Saha - BASIS SoftExpo 2023</p>
+Developer - Sumit Saha - BASIS SoftExpo 2023</p>
                     </a>
                     <div>
                         <span className="text-gray-400 text-xs mt-1">34.5 Mins</span>
@@ -70,8 +70,9 @@ const SidePlayer = () => {
                     </div>
                 </div>
             </div>
-
         </div>
+
+
     );
 };
 

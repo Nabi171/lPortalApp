@@ -4,6 +4,7 @@ import { Link, useParams } from 'react-router-dom';
 import { userLoggedOut } from '../../../features/auth/authSlice';
 import { useDispatch } from 'react-redux';
 import { useGetUserQuery } from '../../../features/apiSlice';
+import SidePlayer from './SidePlayer';
 const CoursePlayer = () => {
     // const { userId } = useParams();
     // const user = useGetUserQuery(userId);
@@ -81,9 +82,10 @@ const CoursePlayer = () => {
                             </div>
                         </div>
 
-
-
-
+                        <div
+                            className="col-span-full lg:col-auto max-h-[570px] overflow-y-auto bg-secondary p-4 rounded-md border border-slate-50/10 divide-y divide-slate-600/30">
+                            <SidePlayer />
+                        </div>
 
                     </div>
                 </div>
