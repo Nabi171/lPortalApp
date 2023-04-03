@@ -35,13 +35,6 @@ const LeaderBoard = () => {
 
 
 
-
-
-
-
-
-
-
     return (
         <div>
             <nav className="shadow-md">
