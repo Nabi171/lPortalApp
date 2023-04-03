@@ -8,7 +8,10 @@ const SingleAssignment = ({ assignment }) => {
             <td className="table-td">{student_name}</td>
             <td className="table-td">{repo_link}</td>
             <td className="table-td input-mark">
-                <input max="100" value={mark} />
+                {status == "pending" && <input max="100" value={mark} />}
+                {
+                    status == "published" && <td className="table-td">{mark}</td>
+                }
                 {status == "pending" && <svg fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
                     className="w-6 h-6 text-green-500 cursor-pointer hover:text-green-400">
                     <path stroke-linecap="round" stroke-linejoin="round"
