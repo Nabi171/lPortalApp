@@ -33,7 +33,7 @@ const LeaderBoard = () => {
         content = filtersMark.map((fm) => <LeaderBoardTable key={fm.id} fm={fm} />)
     }
 
-    // if (!isLoading && !isError && assignmentMark ?.le
+    // if (!isLoading && !isError && assignmentMark 
 
 
 
