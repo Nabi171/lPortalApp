@@ -36,7 +36,7 @@ const LeaderBoard = () => {
     // if (!isLoading && !isError && assignmentMark ?.length > 0) {
 
 
-    // }
+    // 
 
 
 
@@ -102,8 +102,7 @@ const LeaderBoard = () => {
                                     <th className="table-th !text-center">Total</th>
                                 </tr>
                             </thead>
-                            <LeaderBoardTable />
-                            <LeaderBoardTable />
+                            {content}
                             <tbody>
 
                             </tbody>
