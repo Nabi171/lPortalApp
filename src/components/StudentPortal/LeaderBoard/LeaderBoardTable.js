@@ -1,6 +1,6 @@
 import React from 'react';
 
-const LeaderBoardTable = () => {
+const LeaderBoardTable = ({ fm }) => {
     return (
 
         <tr className="border-b border-slate-600/50">
