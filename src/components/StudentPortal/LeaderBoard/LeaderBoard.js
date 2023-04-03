@@ -26,11 +26,11 @@ const LeaderBoard = () => {
     }
 
     if (!isLoading && !isError && assignmentMark ?.length > 0) {
-        //     content = assignmentMark.map((assignment) => <SingleAssignment key={assignment.id} assignment={assignment} />)
+
         const filteredPublish = assignmentMark ?.filter((pb) => pb.status == "published");
-        console.log(filteredPublish)
-        const scap = filteredPublish.filter((a, b) => b.mark > a.mark);
-        console.log(scap)
+
+        const scap = filteredPublish.sort((a, b) => b.mark - a.mark);
+
     }
 
 
