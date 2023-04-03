@@ -36,7 +36,7 @@ const LeaderBoard = () => {
 
 
 
-    // return filte
+    // ret
     // console.log(filteredPublish);
     // }
     return (
