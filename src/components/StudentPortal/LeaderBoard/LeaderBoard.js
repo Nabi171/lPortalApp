@@ -1,7 +1,40 @@
 import React from 'react';
 import logo from "../../learningportal.svg";
 import { Link } from 'react-router-dom';
+import { useGetAssignmentMarkQuery } from '../../../features/apiSlice';
 const LeaderBoard = () => {
+    const { data: assignmentMark, isLoading, isError } = useGetAssignmentMarkQuery();
+    // decide what to render
+    let content = null;
+
+    if (isLoading) {
+        content = (
+            <>
+                <p>loading...</p>
+            </>
+        );
+    }
+
+    if (!isLoading && isError) {
+        content = <p>There is an error</p>;
+
+    }
+
+    if (!isLoading && !isError && assignmentMark ?.length === 0) {
+        content = <p>There is no assignmentMark</p>;
+    }
+
+    // if (!isLoading && !isError && assignmentMark ?.length > 0) {
+    //     content = assignmentMark.map((assignment) => <SingleAssignment key={assignment.id} assignment={assignment} />)
+
+    // }
+
+
+    // if (assignmentMark) {
+    // const filteredPublish = assignmentMark ?.filter((pb) => pb.status == "published");
+    // return filteredPublish;
+    // console.log(filteredPublish);
+    // }
     return (
         <div>
             <nav className="shadow-md">

@@ -31,7 +31,7 @@ function App() {
   ) : (
       <BrowserRouter>
         <Routes>
-          <Route exact path='/' element={<Home />} />
+          <Route exact path='/' element={<Login />} />
           <Route exact path='/home' element={<Home />} />
           <Route exact path='/home' element={<Home />} />
 
@@ -64,7 +64,7 @@ function App() {
           <Route exact path='/StudentPortal/quiz' element={<Quiz />} />
 
           //adminPortal
-          <Route exact path='/Dashboard/adminLogin' element={<AdminLogin />} />
+          <Route exact path='/admin' element={<AdminLogin />} />
           <Route exact path='/Dashboard/dashboard' element={
             <PrivateRoute>
               <DassBoard />

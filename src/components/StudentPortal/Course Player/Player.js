@@ -29,7 +29,7 @@ const Player = () => {
 
                     /></Link>
                     <div className="flex items-center gap-3">
-                        <a href="./Leaderboard.html">Leaderboard</a>
+                        <Link to="/StudentPortal/leaderboard">Leaderboard</Link>
                         <h2 className="font-bold">Saad Hasan</h2>
                         <button
                             onClick={logout}
