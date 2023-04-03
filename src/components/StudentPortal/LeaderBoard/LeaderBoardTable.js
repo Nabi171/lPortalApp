@@ -1,6 +1,7 @@
 import React from 'react';
 
 const LeaderBoardTable = ({ fm }) => {
+    const { id, student_name, mark } = fm;
     return (
 
         <tr className="border-b border-slate-600/50">
