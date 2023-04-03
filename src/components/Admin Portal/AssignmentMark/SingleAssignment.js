@@ -1,24 +1,24 @@
 import React, { useState } from 'react';
-import { useEditAssignmentMarkQuery } from '../../../features/apiSlice';
+import { useEditAssignmentMarkMutation } from '../../../features/apiSlice';
 const SingleAssignment = ({ assignment }) => {
-    // const [editAssignmentMark, { isLoading, isError, isSuccess }] =
-    //     useEditAssignmentMarkQuery();
-    const { student_name, title, createdAt, totalMark, repo_link, mark: initialMark, status } = assignment;
+    const [editAssignmentMark, { isLoading, isError, isSuccess }] =
+        useEditAssignmentMarkMutation();
+    const { student_name, id, title, createdAt, totalMark, repo_link, mark: initialMark, status } = assignment;
     const [mark, setMark] = useState(initialMark);
 
-    // const handleSubmit = (e) => {
-    //     e.preventDefault();
-    //     editAssignmentMark({
-    //         // id,
-    //         data: {
-    //             mark,
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        editAssignmentMark({
+            id,
+            data: {
+                mark,
+                status: "published",
 
-
-    //         },
-    //     });
-    //     // navigate('/Dashboard/quizzes')
-    //     window.location.reload();
-    // };
+            },
+        });
+        // navigate('/Dashboard/quizzes')
+        window.location.reload();
+    };
     return (
         <tr>
             <td className="table-td">{title}</td>
@@ -26,15 +26,23 @@ const SingleAssignment = ({ assignment }) => {
             <td className="table-td">{student_name}</td>
             <td className="table-td">{repo_link}</td>
             <td className="table-td input-mark">
-                {status == "pending" && <input max="100" value={mark} />}
+
                 {
                     status == "published" && <td className="table-td">{mark}</td>
                 }
-                {status == "pending" && <svg fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
-                    className="w-6 h-6 text-green-500 cursor-pointer hover:text-green-400">
-                    <path stroke-linecap="round" stroke-linejoin="round"
-                        d="M4.5 12.75l6 6 9-13.5" />
-                </svg>}
+                {status == "pending" && <>
+                    <input max="100" value={mark}
+                        onChange={(e) => setMark(e.target.value)}
+                    />
+                    <svg
+                        onClick={handleSubmit}
+                        fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
+                        className="w-6 h-6 text-green-500 cursor-pointer hover:text-green-400">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M4.5 12.75l6 6 9-13.5" />
+                    </svg>
+                </>
+                }
             </td>
             <td className="table-td">{totalMark}</td>
 
