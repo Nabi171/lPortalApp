@@ -29,6 +29,9 @@ const AssignmentMark = () => {
         content = assignmentMark.map((assignment) => <SingleAssignment key={assignment.id} assignment={assignment} />)
 
     }
+
+    const publishedNumber = assignmentMark.filter((a) => a.status == "published");
+    console.log(publishedNumber);
     return (
         <div>
             <nav className="shadow-md">
