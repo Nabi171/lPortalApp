@@ -53,7 +53,7 @@ const AssignmentMark = () => {
                 <div className="mx-auto max-w-full px-5 lg:px-20">
                     <div className="px-3 py-20 bg-opacity-10">
                         <ul className="assignment-status">
-                            <li>Total <span>4</span></li>
+                            <li>Total <span>{assignmentMark.length}</span></li>
                             <li>Pending <span>3</span></li>
                             <li>Mark Sent <span>1</span></li>
                         </ul>
@@ -66,6 +66,7 @@ const AssignmentMark = () => {
                                         <th className="table-th">Student Name</th>
                                         <th className="table-th">Repo Link</th>
                                         <th className="table-th">Mark</th>
+                                        <th className="table-th">TotalMark</th>
                                     </tr>
                                 </thead>
 
