@@ -96,6 +96,17 @@ export const apiSlice = createApi({
             keepUnusedDataFor: 600,
             providesTags: ["assignmentMark"],
         }),
+        editAssignmentMark: builder.mutation({
+            query: ({ id, data }) => ({
+                url: `/assignmentMark/${id}`,
+                method: "PATCH",
+                body: data,
+            }),
+            invalidatesTags: (result, error, arg) => [
+                "AssignmentMark",
+                { type: "AssignmentMark", id: arg.id },
+            ],
+        }),
 
         ///////////handle assignment implement////////
         getAssignments: builder.query({
@@ -167,6 +178,7 @@ export const {
 
 
     useGetAssignmentMarkQuery,
+    useEditAssignmentMarkMutation,
 
     useGetAssignmentsQuery,
     useGetAssignmentQuery,

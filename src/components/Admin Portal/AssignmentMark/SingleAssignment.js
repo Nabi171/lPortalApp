@@ -1,6 +1,24 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useEditAssignmentMarkQuery } from '../../../features/apiSlice';
 const SingleAssignment = ({ assignment }) => {
-    const { student_name, title, createdAt, totalMark, repo_link, mark, status } = assignment;
+    // const [editAssignmentMark, { isLoading, isError, isSuccess }] =
+    //     useEditAssignmentMarkQuery();
+    const { student_name, title, createdAt, totalMark, repo_link, mark: initialMark, status } = assignment;
+    const [mark, setMark] = useState(initialMark);
+
+    // const handleSubmit = (e) => {
+    //     e.preventDefault();
+    //     editAssignmentMark({
+    //         // id,
+    //         data: {
+    //             mark,
+
+
+    //         },
+    //     });
+    //     // navigate('/Dashboard/quizzes')
+    //     window.location.reload();
+    // };
     return (
         <tr>
             <td className="table-td">{title}</td>

@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { useGetAssignmentMarkQuery } from '../../../features/apiSlice';
 import SingleAssignment from './SingleAssignment';
 const AssignmentMark = () => {
+
     const { data: assignmentMark, isLoading, isError } = useGetAssignmentMarkQuery();
     // decide what to render
     let content = null;
