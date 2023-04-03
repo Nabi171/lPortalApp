@@ -2,6 +2,7 @@ import React from 'react';
 import logo from "../../learningportal.svg";
 import { Link } from 'react-router-dom';
 import { useGetAssignmentMarkQuery } from '../../../features/apiSlice';
+import LeaderBoardTable from './LeaderBoardTable';
 const LeaderBoard = () => {
     const { data: assignmentMark, isLoading, isError } = useGetAssignmentMarkQuery();
     // decide what to render
@@ -24,10 +25,13 @@ const LeaderBoard = () => {
         content = <p>There is no assignmentMark</p>;
     }
 
-    // if (!isLoading && !isError && assignmentMark ?.length > 0) {
-    //     content = assignmentMark.map((assignment) => <SingleAssignment key={assignment.id} assignment={assignment} />)
-
-    // }
+    if (!isLoading && !isError && assignmentMark ?.length > 0) {
+        //     content = assignmentMark.map((assignment) => <SingleAssignment key={assignment.id} assignment={assignment} />)
+        const filteredPublish = assignmentMark ?.filter((pb) => pb.status == "published");
+        console.log(filteredPublish)
+        const scap = filteredPublish.filter((a, b) => b.mark > a.mark);
+        console.log(scap)
+    }
 
 
     // if (assignmentMark) {
@@ -85,67 +89,7 @@ const LeaderBoard = () => {
 
                     <div className="my-8">
                         <h3 className="text-lg font-bold">Top 20 Result</h3>
-                        <table className="text-base w-full border border-slate-600/50 rounded-md my-4">
-                            <thead>
-                                <tr className="border-b border-slate-600/50">
-                                    <th className="table-th !text-center">Rank</th>
-                                    <th className="table-th !text-center">Name</th>
-                                    <th className="table-th !text-center">Quiz Mark</th>
-                                    <th className="table-th !text-center">Assignment Mark</th>
-                                    <th className="table-th !text-center">Total</th>
-                                </tr>
-                            </thead>
-
-                            <tbody>
-                                <tr className="border-b border-slate-600/50">
-                                    <td className="table-td text-center">4</td>
-                                    <td className="table-td text-center">Saad Hasan</td>
-                                    <td className="table-td text-center">50</td>
-                                    <td className="table-td text-center">50</td>
-                                    <td className="table-td text-center">100</td>
-                                </tr>
-
-                                <tr className="border-b border-slate-600/50">
-                                    <td className="table-td text-center">4</td>
-                                    <td className="table-td text-center">Saad Hasan</td>
-                                    <td className="table-td text-center">50</td>
-                                    <td className="table-td text-center">50</td>
-                                    <td className="table-td text-center">100</td>
-                                </tr>
-
-                                <tr className="border-b border-slate-600/50">
-                                    <td className="table-td text-center">4</td>
-                                    <td className="table-td text-center">Saad Hasan</td>
-                                    <td className="table-td text-center">50</td>
-                                    <td className="table-td text-center">50</td>
-                                    <td className="table-td text-center">100</td>
-                                </tr>
-
-                                <tr className="border-b border-slate-600/50">
-                                    <td className="table-td text-center">4</td>
-                                    <td className="table-td text-center">Saad Hasan</td>
-                                    <td className="table-td text-center">50</td>
-                                    <td className="table-td text-center">50</td>
-                                    <td className="table-td text-center">100</td>
-                                </tr>
-
-                                <tr className="border-b border-slate-600/50">
-                                    <td className="table-td text-center">4</td>
-                                    <td className="table-td text-center">Saad Hasan</td>
-                                    <td className="table-td text-center">50</td>
-                                    <td className="table-td text-center">50</td>
-                                    <td className="table-td text-center">100</td>
-                                </tr>
-
-                                <tr className="border-slate-600/50">
-                                    <td className="table-td text-center">4</td>
-                                    <td className="table-td text-center">Saad Hasan</td>
-                                    <td className="table-td text-center">50</td>
-                                    <td className="table-td text-center">50</td>
-                                    <td className="table-td text-center">100</td>
-                                </tr>
-                            </tbody>
-                        </table>
+                        <LeaderBoardTable />
                     </div>
                 </div>
             </section>
