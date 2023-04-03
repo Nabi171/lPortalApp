@@ -36,7 +36,6 @@ const LeaderBoard = () => {
     // if (!isLoading && !isError && assignmentMark ?.length > 0) {
 
 
-    // 
 
 
 
