@@ -29,9 +29,13 @@ const AssignmentMark = () => {
         content = assignmentMark.map((assignment) => <SingleAssignment key={assignment.id} assignment={assignment} />)
 
     }
+    // if (assignmentMark) {
+    const filteredPublish = assignmentMark ?.filter((pb) => pb.status == "published");
+    // return filteredPublish;
+    // console.log(filteredPublish);
+    // }
 
-    const publishedNumber = assignmentMark.filter((a) => a.status == "published");
-    console.log(publishedNumber);
+
     return (
         <div>
             <nav className="shadow-md">
@@ -56,9 +60,17 @@ const AssignmentMark = () => {
                 <div className="mx-auto max-w-full px-5 lg:px-20">
                     <div className="px-3 py-20 bg-opacity-10">
                         <ul className="assignment-status">
-                            <li>Total <span>{assignmentMark.length}</span></li>
-                            <li>Pending <span>3</span></li>
-                            <li>Mark Sent <span>1</span></li>
+                            {assignmentMark ? <li>Total <span>{assignmentMark.length}</span></li>
+                                : <li>Total <span>3</span></li>
+                            }
+                            {assignmentMark ? <li>Pending <span>{assignmentMark.length - filteredPublish.length}</span></li>
+                                : <li>Pending <span>3</span></li>
+                            }
+                            {assignmentMark ? <li>Mark Sent <span>{filteredPublish.length}</span></li>
+                                : <li>Mark Sent <span>3</span></li>
+                            }
+                            {/* <li>Pending <span>3</span></li>
+                            <li>Mark Sent <span>1</span></li> */}
                         </ul>
                         <div className="overflow-x-auto mt-4">
                             <table className="divide-y-1 text-base divide-gray-600 w-full">
@@ -69,7 +81,7 @@ const AssignmentMark = () => {
                                         <th className="table-th">Student Name</th>
                                         <th className="table-th">Repo Link</th>
                                         <th className="table-th">Mark</th>
-                                        <th className="table-th">TotalMark</th>
+                                        <th className="table-th">Mark</th>
                                     </tr>
                                 </thead>
 
