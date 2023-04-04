@@ -94,7 +94,20 @@ const Player = () => {
                                                 </div>
                                                 {/*body*/}
                                                 <div className="relative p-6 flex-auto">
-                                                    <input type="text" />
+                                                    <div>
+                                                        <label for="email-address" className="sr-only">Email address</label>
+                                                        <input
+                                                            id="email-address" name="email" type="email" autocomplete="email" required
+                                                            className="login-input rounded-t-md" placeholder="Email address" />
+                                                    </div>
+                                                    <div>
+                                                        <label for="email-address" className="sr-only">Email address</label>
+                                                        <input
+                                                            // value={email}
+                                                            // onChange={(e) => setEmail(e.target.value)}
+                                                            id="email-address" name="email" type="email" autocomplete="email" required
+                                                            className="login-input rounded-t-md" placeholder="Email address" />
+                                                    </div>
                                                 </div>
                                                 {/*footer*/}
                                                 <div className="flex items-center justify-end p-6 border-t border-solid gap-4 border-slate-200 rounded-b">
