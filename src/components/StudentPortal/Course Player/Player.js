@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useGetVideoQuery, useGetSingleAssignmentMarkQuery } from '../../../features/apiSlice';
+import { useGetVideoQuery, useGetSingleAssignmentMarkQuery, usePostAssignmentMarkMutation } from '../../../features/apiSlice';
 import logo from "../../learningportal.svg";
 import { useParams } from 'react-router';
 import PlayerTwo from './PlayerTwo';
@@ -19,14 +19,41 @@ const Player = () => {
 
     const { data: video, isLoading, isError } = useGetVideoQuery(svideoId);
     const { data: singleAssignmentMark, isLoading2, isError2 } = useGetSingleAssignmentMarkQuery(svideoId);
-    const { createdAt, totalmark, student_name } = singleAssignmentMark;
+    // console.log(singleAssignmentMark)
+    // const { createdAt, totalmark, student_name, assignment_id, title, student_id } = singleAssignmentMark;
+    const [postAssignmentMark, { isLoading3, isSuccess3, isError3 }] = usePostAssignmentMarkMutation();
+
+
+
+
+    const [createdAt] = useState("2021-01-15T15:17:01.727Z");
+    const [totalmark] = useState(100);
+    const [student_name] = useState('Saad Hasan');
+    const [assignment_id] = useState(1);
+    const [title] = useState('Assignment 1 - Implement Debounce Function');
+    const [student_id] = useState(1)
+    const [mark] = useState(0);
+    const [status] = useState("pending")
+
 
     const [repo_link, setRepolink] = useState('')
-    console.log(repo_link);
-    console.log(singleAssignmentMark);
+    // console.log(repo_link);
+    // console.log(singleAssignmentMark);
 
 
-
+    const handleSubmit = (e) => {
+        console.log(repo_link, createdAt, totalmark, student_name, mark, title, assignment_id, status, student_id)
+        e.preventDefault();
+        // addVideo({
+        //     title,
+        //     description,
+        //     url,
+        //     views,
+        //     duration,
+        //     createdAt
+        // });
+        // navigate('/Dashboard/videos')
+    };
 
 
 
@@ -108,41 +135,43 @@ const Player = () => {
                                                     </button>
                                                 </div>
                                                 {/*body*/}
-                                                <div className="relative p-6 flex-auto">
-                                                    <div>
-                                                        <label for="github-address" className="sr-only">Github address</label>
-                                                        <input
-                                                            value={repo_link}
-                                                            onChange={(e) => setRepolink(e.target.value)}
-                                                            name="text" type="email" autocomplete="github" required
-                                                            className="login-input rounded-t-md" placeholder="Enter your github link" />
-                                                    </div>
-                                                    {/* <div>
+                                                <form>
+                                                    <div className="relative p-6 flex-auto">
+                                                        <div>
+                                                            <label for="github-address" className="sr-only">Github address</label>
+                                                            <input
+                                                                value={repo_link}
+                                                                onChange={(e) => setRepolink(e.target.value)}
+                                                                name="text" type="email" autocomplete="github" required
+                                                                className="login-input rounded-t-md" placeholder="Enter your github link" />
+                                                        </div>
+                                                        {/* <div>
                                                         <label for="email-address" className="sr-only">Web address</label>
                                                         <input
                                                             name="web" type="text" autocomplete="webLink" required
                                                             className="login-input rounded-t-md" placeholder="Enter your web link" />
                                                     </div> */}
-                                                </div>
-                                                {/*footer*/}
-                                                <div className="mt-1 flex items-center justify-end p-6 border-t border-solid gap-4 border-slate-200 rounded-b">
-                                                    <button
-                                                        // className="text-red-500 background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
-                                                        className="px-3 font-bold py-1 border border-cyan text-cyan rounded-full text-sm hover:bg-cyan hover:text-primary"
-                                                        type="button"
-                                                        onClick={() => setShowModal(false)}
-                                                    >
-                                                        Cancel
+                                                    </div>
+                                                    {/*footer*/}
+                                                    <div className="mt-1 flex items-center justify-end p-6 border-t border-solid gap-4 border-slate-200 rounded-b">
+                                                        <button
+                                                            // className="text-red-500 background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                                                            className="px-3 font-bold py-1 border border-cyan text-cyan rounded-full text-sm hover:bg-cyan hover:text-primary"
+                                                            type="button"
+                                                            onClick={() => setShowModal(false)}
+                                                        >
+                                                            Cancel
                                                       </button>
-                                                    <button
-                                                        // className="bg-emerald-500 text-white active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
-                                                        className="px-3 font-bold py-1 border border-cyan text-cyan rounded-full text-sm hover:bg-cyan hover:text-primary"
-                                                        type="button"
-                                                        onClick={() => setShowModal(false)}
-                                                    >
-                                                        Submit Assignment
+                                                        <button
+                                                            // className="bg-emerald-500 text-white active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                                                            className="px-3 font-bold py-1 border border-cyan text-cyan rounded-full text-sm hover:bg-cyan hover:text-primary"
+                                                            type="button"
+                                                            onClick={() => setShowModal(false)}
+                                                        >
+                                                            Submit Assignment
                                                     </button>
-                                                </div>
+                                                    </div>
+                                                </form>
                                             </div>
                                         </div>
                                     </div>
