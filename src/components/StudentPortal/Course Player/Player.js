@@ -51,7 +51,6 @@ const Player = () => {
                         {/* <Player /> */}
 
 
-
                         <div className="col-span-full w-full space-y-8 lg:col-span-2">
                             {video ?
 
@@ -80,8 +79,8 @@ const Player = () => {
                                         Uploaded on {video.createdAt}
                                         2020</h2> :
                                         <h2 className=" pb-4 text-sm leading-[1.7142857] text-slate-400">
-                                            Uploaded on 23 February
-2020</h2>
+                                            Uploaded on 23 February 2020
+                                        </h2>
                                 }
 
                                 <div className="flex gap-4">
@@ -114,10 +113,7 @@ const Player = () => {
                     </div>
                 </div>
             </section>
-
         </div >
-
-
     );
 };
 
