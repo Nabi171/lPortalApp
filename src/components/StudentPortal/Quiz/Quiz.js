@@ -25,10 +25,10 @@ const Quiz = () => {
         content = <p>There is no quizzes</p>;
     }
 
-    // if (!isLoading && !isError && assignmentMark ?.length > 0) {
-    //     content = assignmentMark.map((assignment) => <SingleAssignment key={assignment.id} assignment={assignment} />)
+    if (!isLoading && !isError && quizzes ?.length > 0) {
+        // content = quizzes.map((quizze) => <SingleAssignment key={quizze.id} quizze={quizze} />)
 
-    // }
+    }
 
 
 
