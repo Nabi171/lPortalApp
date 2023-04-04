@@ -1,7 +1,45 @@
 import React from 'react';
 import logo from "../../learningportal.svg";
 import { Link } from 'react-router-dom';
+import { useGetQuizzesQuery } from '../../../features/apiSlice';
 const Quiz = () => {
+    const { data: quizzes, isLoading, isError } = useGetQuizzesQuery();
+    console.log(quizzes)
+    // decide what to render
+    let content = null;
+
+    if (isLoading) {
+        content = (
+            <>
+                <p>loading...</p>
+            </>
+        );
+    }
+
+    if (!isLoading && isError) {
+        content = <p>There is an error</p>;
+
+    }
+
+    // if (!isLoading && !isError && assignmentMark ?.length === 0) {
+    //     content = <p>There is no assignmentMark</p>;
+    // }
+
+    // if (!isLoading && !isError && assignmentMark ?.length > 0) {
+    //     content = assignmentMark.map((assignment) => <SingleAssignment key={assignment.id} assignment={assignment} />)
+
+    // }
+
+
+
+
+
+
+
+
+
+
+
     return (
         <div>
             {/* <!-- Navigatin Bar. It contains Logo, Center Text And Save Progress Button at the end --> */}
