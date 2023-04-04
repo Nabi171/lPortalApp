@@ -88,12 +88,11 @@ const Player = () => {
                                     <a href="#"
                                         className="px-3 font-bold py-1 border border-cyan text-cyan rounded-full text-sm hover:bg-cyan hover:text-primary">
                                         এসাইনমেন্ট
-        </a>
+                                    </a>
 
                                     <Link to="/StudentPortal/quiz"
-                                        className="px-3 font-bold py-1 border border-cyan text-cyan rounded-full text-sm hover:bg-cyan hover:text-primary">কুইজে
-                                        অংশগ্রহণ
-            করুন</Link>
+                                        className="px-3 font-bold py-1 border border-cyan text-cyan rounded-full text-sm hover:bg-cyan hover:text-primary">কুইজে অংশগ্রহণ করুন
+                                    </Link>
                                 </div>
                                 {
                                     video ? <p>{video.description}</p> :
