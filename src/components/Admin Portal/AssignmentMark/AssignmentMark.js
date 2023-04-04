@@ -32,7 +32,7 @@ const AssignmentMark = () => {
     }
 
     const filteredPublish = assignmentMark ?.filter((pb) => pb.status == "published");
-    // return
+    // retu
     // console.log(filteredPublish);
     // }
 
