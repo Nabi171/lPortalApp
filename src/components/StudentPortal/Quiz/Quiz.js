@@ -21,9 +21,9 @@ const Quiz = () => {
 
     }
 
-    // if (!isLoading && !isError && assignmentMark ?.length === 0) {
-    //     content = <p>There is no assignmentMark</p>;
-    // }
+    if (!isLoading && !isError && quizzes ?.length === 0) {
+        content = <p>There is no quizzes</p>;
+    }
 
     // if (!isLoading && !isError && assignmentMark ?.length > 0) {
     //     content = assignmentMark.map((assignment) => <SingleAssignment key={assignment.id} assignment={assignment} />)
