@@ -115,7 +115,7 @@ export const apiSlice = createApi({
             }),
             invalidatesTags: ["AssignmentMark"],
         }),
-        getAssignmentMark: builder.query({
+        getSingleAssignmentMark: builder.query({
             query: (videoId) => `/assignmentMark/${videoId}`,
             providesTags: (result, error, arg) => [{ type: "AssignmentMark", id: arg }],
         }),
@@ -192,6 +192,7 @@ export const {
     useGetAssignmentMarkQuery,
     useEditAssignmentMarkMutation,
     usePostAssignmentMarkMutation,
+    useGetSingleAssignmentMarkQuery,
 
     useGetAssignmentsQuery,
     useGetAssignmentQuery,

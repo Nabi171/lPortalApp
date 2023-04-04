@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useGetVideoQuery } from '../../../features/apiSlice';
+import { useGetVideoQuery, useGetSingleAssignmentMarkQuery } from '../../../features/apiSlice';
 import logo from "../../learningportal.svg";
 import { useParams } from 'react-router';
 import PlayerTwo from './PlayerTwo';
@@ -18,6 +18,12 @@ const Player = () => {
     const { svideoId } = useParams();
 
     const { data: video, isLoading, isError } = useGetVideoQuery(svideoId);
+    const { data: singleAssignmentMark, isLoading2, isError2 } = useGetSingleAssignmentMarkQuery(svideoId);
+    const { createdAt, totalmark, student_name } = singleAssignmentMark;
+
+    const [repo_link, setRepolink] = useState('')
+    console.log(repo_link);
+    console.log(singleAssignmentMark);
 
 
 
@@ -106,15 +112,17 @@ const Player = () => {
                                                     <div>
                                                         <label for="github-address" className="sr-only">Github address</label>
                                                         <input
+                                                            value={repo_link}
+                                                            onChange={(e) => setRepolink(e.target.value)}
                                                             name="text" type="email" autocomplete="github" required
                                                             className="login-input rounded-t-md" placeholder="Enter your github link" />
                                                     </div>
-                                                    <div>
+                                                    {/* <div>
                                                         <label for="email-address" className="sr-only">Web address</label>
                                                         <input
                                                             name="web" type="text" autocomplete="webLink" required
                                                             className="login-input rounded-t-md" placeholder="Enter your web link" />
-                                                    </div>
+                                                    </div> */}
                                                 </div>
                                                 {/*footer*/}
                                                 <div className="mt-1 flex items-center justify-end p-6 border-t border-solid gap-4 border-slate-200 rounded-b">
