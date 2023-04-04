@@ -43,9 +43,6 @@ const ShowQuiz = ({ quizze }) => {
 </label> */}
 
                         {/* <!-- Option 4 --> */}
-                        {/* <label for="option4_q1">
-                            <input type="checkbox" id="option4_q1" />
-                            A function that is called after a certain time interval
 
                     </form>
                 </div>
