@@ -32,7 +32,7 @@ const AssignmentMark = () => {
     }
 
     const filteredPublish = assignmentMark ?.filter((pb) => pb.status == "published");
-    // return f
+    // return
     // console.log(filteredPublish);
     // }
 
