@@ -26,15 +26,6 @@ const ShowQuiz = ({ quizze }) => {
                         }
 
 
-
-
-
-
-
-
-
-
-
                     </form>
                 </div>
 
