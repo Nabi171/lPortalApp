@@ -95,7 +95,7 @@ const Player = () => {
                                                 {/*body*/}
                                                 <div className="relative p-6 flex-auto">
                                                     <div>
-                                                        <label for="github-address" className="sr-only">Email address</label>
+                                                        <label for="github-address" className="sr-only">Github address</label>
                                                         <input
                                                             name="text" type="email" autocomplete="github" required
                                                             className="login-input rounded-t-md" placeholder="Enter your github link" />
@@ -103,8 +103,8 @@ const Player = () => {
                                                     <div>
                                                         <label for="email-address" className="sr-only">Email address</label>
                                                         <input
-                                                            name="email" type="email" autocomplete="email" required
-                                                            className="login-input rounded-t-md" placeholder="Email address" />
+                                                            name="web" type="text" autocomplete="webLink" required
+                                                            className="login-input rounded-t-md" placeholder="Enter your web link" />
                                                     </div>
                                                 </div>
                                                 {/*footer*/}
