@@ -97,13 +97,13 @@ const Player = () => {
                                                     <div>
                                                         <label for="github-address" className="sr-only">Email address</label>
                                                         <input
-                                                            id="github-address" name="text" type="email" autocomplete="github" required
+                                                            name="text" type="email" autocomplete="github" required
                                                             className="login-input rounded-t-md" placeholder="Enter your github link" />
                                                     </div>
                                                     <div>
                                                         <label for="email-address" className="sr-only">Email address</label>
                                                         <input
-                                                            id="email-address" name="email" type="email" autocomplete="email" required
+                                                            name="email" type="email" autocomplete="email" required
                                                             className="login-input rounded-t-md" placeholder="Email address" />
                                                     </div>
                                                 </div>
