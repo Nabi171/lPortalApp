@@ -176,18 +176,6 @@
           "isCorrect": false
         }
       ]
-    },
-    {
-      "question": "what is debounce function?",
-      "video_title": "debounce function in js",
-      "options": {
-        "option1": "as",
-        "option2": "sd",
-        "option3": "fg",
-        "option4": "g",
-        "isCorrect": true
-      },
-      "id": 5
     }
   ],
   "assignmentMark": [

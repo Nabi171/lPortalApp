@@ -30,7 +30,7 @@ const AssignmentMark = () => {
         content = assignmentMark.map((assignment) => <SingleAssignment key={assignment.id} assignment={assignment} />)
 
     }
-    // if (assignmentMark) {
+
     const filteredPublish = assignmentMark ?.filter((pb) => pb.status == "published");
     // return filteredPublish;
     // console.log(filteredPublish);
