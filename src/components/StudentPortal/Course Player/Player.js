@@ -103,8 +103,6 @@ const Player = () => {
                                                     <div>
                                                         <label for="email-address" className="sr-only">Email address</label>
                                                         <input
-                                                            // value={email}
-                                                            // onChange={(e) => setEmail(e.target.value)}
                                                             id="email-address" name="email" type="email" autocomplete="email" required
                                                             className="login-input rounded-t-md" placeholder="Email address" />
                                                     </div>
