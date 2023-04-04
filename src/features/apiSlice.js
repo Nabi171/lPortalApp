@@ -187,6 +187,7 @@ export const {
 
     useGetAssignmentMarkQuery,
     useEditAssignmentMarkMutation,
+    usePostAssignmentMarkMutation,
 
     useGetAssignmentsQuery,
     useGetAssignmentQuery,
