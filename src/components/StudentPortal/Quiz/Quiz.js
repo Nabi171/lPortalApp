@@ -2,6 +2,7 @@ import React from 'react';
 import logo from "../../learningportal.svg";
 import { Link } from 'react-router-dom';
 import { useGetQuizzesQuery } from '../../../features/apiSlice';
+import ShowQuiz from './ShowQuiz';
 const Quiz = () => {
     const { data: quizzes, isLoading, isError } = useGetQuizzesQuery();
 
@@ -26,7 +27,7 @@ const Quiz = () => {
     }
 
     if (!isLoading && !isError && quizzes ?.length > 0) {
-        // content = quizzes.map((quizze) => <SingleAssignment key={quizze.id} quizze={quizze} />)
+        content = quizzes.map((quizze) => <ShowQuiz key={quizze.id} quizze={quizze} />)
 
     }
 
@@ -53,7 +54,7 @@ const Quiz = () => {
             </nav>
 
             <section className="py-6 bg-primary">
-
+                {content}
             </section>
         </div>
     );
