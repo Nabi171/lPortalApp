@@ -107,6 +107,14 @@ export const apiSlice = createApi({
                 { type: "AssignmentMark", id: arg.id },
             ],
         }),
+        postAssignmentMark: builder.mutation({
+            query: (data) => ({
+                url: "/assignmentMark",
+                method: "POST",
+                body: data,
+            }),
+            invalidatesTags: ["AssignmentMark"],
+        }),
 
         ///////////handle assignment implement////////
         getAssignments: builder.query({

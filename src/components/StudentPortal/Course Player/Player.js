@@ -19,6 +19,15 @@ const Player = () => {
 
     const { data: video, isLoading, isError } = useGetVideoQuery(svideoId);
 
+
+
+
+
+
+
+
+
+
     return (
 
         <div>
