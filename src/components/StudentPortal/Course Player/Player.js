@@ -145,10 +145,16 @@ const Player = () => {
                                 }
 
                                 <div className="flex gap-4">
-                                    <a href="#"
-                                        className="px-3 font-bold py-1 border border-cyan text-cyan rounded-full text-sm hover:bg-cyan hover:text-primary">
+                                    <button
+                                        className="px-3 font-bold py-1 border border-cyan text-cyan rounded-full text-sm hover:bg-cyan hover:text-primary"
+                                        // className="bg-pink-500 text-white active:bg-pink-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                                        type="button"
+                                        onClick={() => setShowModal(true)}
+
+
+                                    >
                                         এসাইনমেন্ট
-                                    </a>
+                                    </button>
 
                                     <Link to="/StudentPortal/quiz"
                                         className="px-3 font-bold py-1 border border-cyan text-cyan rounded-full text-sm hover:bg-cyan hover:text-primary">কুইজে অংশগ্রহণ করুন
