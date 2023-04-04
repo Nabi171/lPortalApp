@@ -50,7 +50,6 @@ const Player = () => {
                     <div className="grid grid-cols-3 gap-2 lg:gap-8">
                         {/* <Player /> */}
 
-
                         <div className="col-span-full w-full space-y-8 lg:col-span-2">
                             {video ?
 
