@@ -101,7 +101,7 @@ const Player = () => {
                                                             className="login-input rounded-t-md" placeholder="Enter your github link" />
                                                     </div>
                                                     <div>
-                                                        <label for="email-address" className="sr-only">Email address</label>
+                                                        <label for="email-address" className="sr-only">Web address</label>
                                                         <input
                                                             name="web" type="text" autocomplete="webLink" required
                                                             className="login-input rounded-t-md" placeholder="Enter your web link" />
