@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useGetVideoQuery } from '../../../features/apiSlice';
 import logo from "../../learningportal.svg";
 import { useParams } from 'react-router';
@@ -8,6 +8,7 @@ import { userLoggedOut } from '../../../features/auth/authSlice';
 import { useDispatch } from 'react-redux';
 
 const Player = () => {
+    const [showModal, setShowModal] = useState(false);
     const dispatch = useDispatch();
 
     const logout = () => {
