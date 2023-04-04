@@ -31,15 +31,6 @@ const Quiz = () => {
     }
 
 
-
-
-
-
-
-
-
-
-
     return (
         <div>
             {/* <!-- Navigatin Bar. It contains Logo, Center Text And Save Progress Button at the end --> */}
