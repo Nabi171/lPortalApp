@@ -67,7 +67,7 @@ const Player = () => {
                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                     allowfullscreen></iframe>
                             }
-
+                            {/* *********** show modal ****************************************/}
                             <div>
                                 {
                                     video ? <h1 className="text-lg font-semibold tracking-tight text-slate-100">
