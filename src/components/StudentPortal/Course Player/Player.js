@@ -95,10 +95,10 @@ const Player = () => {
                                                 {/*body*/}
                                                 <div className="relative p-6 flex-auto">
                                                     <div>
-                                                        <label for="email-address" className="sr-only">Email address</label>
+                                                        <label for="github-address" className="sr-only">Email address</label>
                                                         <input
-                                                            id="email-address" name="email" type="email" autocomplete="email" required
-                                                            className="login-input rounded-t-md" placeholder="Email address" />
+                                                            id="github-address" name="text" type="email" autocomplete="github" required
+                                                            className="login-input rounded-t-md" placeholder="Enter your github link" />
                                                     </div>
                                                     <div>
                                                         <label for="email-address" className="sr-only">Email address</label>
