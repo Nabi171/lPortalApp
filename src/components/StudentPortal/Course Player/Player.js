@@ -90,10 +90,10 @@ const Player = () => {
                                         এসাইনমেন্ট
         </a>
 
-                                    <a href="./Quiz.html"
+                                    <Link to="/StudentPortal/quiz"
                                         className="px-3 font-bold py-1 border border-cyan text-cyan rounded-full text-sm hover:bg-cyan hover:text-primary">কুইজে
                                         অংশগ্রহণ
-            করুন</a>
+            করুন</Link>
                                 </div>
                                 {
                                     video ? <p>{video.description}</p> :
