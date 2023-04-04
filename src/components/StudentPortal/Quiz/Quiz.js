@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { useGetQuizzesQuery } from '../../../features/apiSlice';
 const Quiz = () => {
     const { data: quizzes, isLoading, isError } = useGetQuizzesQuery();
-    console.log(quizzes)
+
     // decide what to render
     let content = null;
 
