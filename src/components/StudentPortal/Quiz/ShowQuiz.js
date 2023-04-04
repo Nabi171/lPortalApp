@@ -42,7 +42,7 @@ const ShowQuiz = ({ quizze }) => {
                             A function that is called after a certain time interval
 </label> */}
 
-                        {/* <!-- Option 4 --> */}
+
 
                     </form>
                 </div>
