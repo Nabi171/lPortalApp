@@ -5,7 +5,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Login from './components/StudentPortal/Login/Login';
 import LeaderBoard from './components/StudentPortal/LeaderBoard/LeaderBoard';
 import Quiz from './components/StudentPortal/Quiz/Quiz';
-import CoursePlayer from './components/StudentPortal/Course Player/CoursePlayer';
+// import CoursePlayer from './components/StudentPortal/Course Player/CoursePlayer';
 import Resigtration from './components/StudentPortal/Resigtration/Resigtration';
 import DassBoard from './components/Admin Portal/Dassboard/DassBoard';
 import AdminLogin from './components/Admin Portal/AdminLogin/AdminLogin';
