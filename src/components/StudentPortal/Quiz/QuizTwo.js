@@ -7,7 +7,7 @@ import ShowQuiz from './ShowQuiz';
 const QuizTwo = () => {
     const { quizzeId } = useParams();
     const { data: quizze, isLoading, isError } = useGetQuizzeQuery(quizzeId);
-
+    console.log(quizze);
     // decide what to render
     let content = null;
 
@@ -31,8 +31,11 @@ const QuizTwo = () => {
     if (!isLoading && !isError && quizze ?.length > 0) {
         // content = quizzes.map((quizze) => <ShowQuiz key={quizze.id} quizze={quizze} />)
         content = <ShowQuiz quizze={quizze} />
+        // const { id, question, video_id, video_title, options } = quizze;
+        // const { question, }
 
     }
+    // const { id, question, video_id, video_title, options } = quizze;
     return (
         <div>
             {/* <!-- Navigatin Bar. It contains Logo, Center Text And Save Progress Button at the end --> */}
@@ -55,7 +58,50 @@ const QuizTwo = () => {
             </nav>
 
             <section className="py-6 bg-primary">
+                {/* <p>{video_title}</p> */}
                 {/* {content} */}
+
+
+
+                <div className="mx-auto max-w-7xl px-5 lg:px-0">
+                    <div className="mb-8">
+                        <h1 className="text-2xl font-bold">Quizzes for "{quizze ?.question} - JavaScript Job Interview question"
+</h1>
+                        <p className="text-sm text-slate-200">Each question contains 5 Mark</p>
+                    </div>
+                    <div className="space-y-8 ">
+                        <div className="quiz">
+                            <h4 className="question">Quiz {quizze ?.id} - {quizze ?.question}</h4>
+                            <form className="quizOptions">
+                                {/* <!-- Option 1 --> */}
+
+                                {
+                                    quizze ?.options.map((option) =>
+                                        <label for="option1_q1">
+                                            <input type="checkbox" id="option1_q1" />
+                                            {option.option}
+                                        </label>
+                                    )
+                                }
+
+
+                            </form>
+                        </div>
+
+
+                    </div>
+
+                    <button
+                        className="px-4 py-2 rounded-full bg-cyan block ml-auto mt-8 hover:opacity-90 active:opacity-100 active:scale-95 ">Submit</button>
+                </div>
+
+
+
+
+
+
+
+
             </section>
         </div>
     );
