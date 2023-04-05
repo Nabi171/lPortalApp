@@ -1,11 +1,12 @@
 import React from 'react';
 import logo from "../../learningportal.svg";
 import { Link, useParams } from 'react-router-dom';
-import { useGetAssignmentMarkQuery, useGetSingleAssignmentMarkQuery } from '../../../features/apiSlice';
+import { useGetAssignmentMarkQuery, useGetSingleAssignmentMarkQuery, useGetSingleQuizMarkQuery } from '../../../features/apiSlice';
 import LeaderBoardTable from './LeaderBoardTable';
 const LeaderBoard = () => {
     const { leaderbordId } = useParams();
     const { data: SingleassignmentMark, isLoading2, isError2 } = useGetSingleAssignmentMarkQuery(leaderbordId);
+    const { data: SingleQuizMark, isLoading3, isError3 } = useGetSingleQuizMarkQuery(leaderbordId);
     // console.log(SingleassignmentMark)
     const { data: assignmentMark, isLoading, isError } = useGetAssignmentMarkQuery();
     // decide what to render
@@ -76,11 +77,13 @@ const LeaderBoard = () => {
 
                             <tbody>
                                 <tr className="border-2 border-cyan">
-                                    <td className="table-td text-center font-bold">4</td>
+                                    <td className="table-td text-center font-bold">3</td>
                                     <td className="table-td text-center font-bold">{SingleassignmentMark ?.student_name}</td>
-                                    <td className="table-td text-center font-bold">50</td>
+                                    <td className="table-td text-center font-bold">{SingleQuizMark ?.mark}</td>
                                     <td className="table-td text-center font-bold">{SingleassignmentMark ?.mark}</td>
-                                    <td className="table-td text-center font-bold">{SingleassignmentMark ?.totalMark}</td>
+                                    {SingleQuizMark ? <td className="table-td text-center font-bold">{parseInt(SingleassignmentMark ?.mark) + parseInt(SingleQuizMark ?.mark)}</td>
+                                        : <td className="table-td text-center font-bold">{parseInt(SingleassignmentMark ?.mark) + parseInt(0)}</td>
+                                    }
                                 </tr>
                             </tbody>
                         </table>
