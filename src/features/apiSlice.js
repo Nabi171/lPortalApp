@@ -207,6 +207,8 @@ export const {
     useGetSingleAssignmentMarkQuery,
 
     useGetQuizMarkQuery,
+    useGetSingleQuizMarkQuery,
+
 
     useGetAssignmentsQuery,
     useGetAssignmentQuery,

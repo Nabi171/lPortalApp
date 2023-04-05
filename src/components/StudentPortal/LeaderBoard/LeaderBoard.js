@@ -6,7 +6,7 @@ import LeaderBoardTable from './LeaderBoardTable';
 const LeaderBoard = () => {
     const { leaderbordId } = useParams();
     const { data: SingleassignmentMark, isLoading2, isError2 } = useGetSingleAssignmentMarkQuery(leaderbordId);
-    console.log(SingleassignmentMark)
+    // console.log(SingleassignmentMark)
     const { data: assignmentMark, isLoading, isError } = useGetAssignmentMarkQuery();
     // decide what to render
     let content = null;
