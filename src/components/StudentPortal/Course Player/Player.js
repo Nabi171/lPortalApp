@@ -61,11 +61,6 @@ const Player = () => {
     };
 
 
-
-
-
-
-
     return (
 
         <div>
