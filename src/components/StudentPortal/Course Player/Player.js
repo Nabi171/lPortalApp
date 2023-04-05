@@ -23,9 +23,6 @@ const Player = () => {
     // const { createdAt, totalmark, student_name, assignment_id, title, student_id } = singleAssignmentMark;
     const [postAssignmentMark, { isLoading3, isSuccess3, isError3 }] = usePostAssignmentMarkMutation();
 
-
-
-
     const [createdAt] = useState("2021-01-15T15:17:01.727Z");
     const [totalmark] = useState(100);
     const [student_name] = useState('Saad Hasan');
