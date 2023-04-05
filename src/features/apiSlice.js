@@ -119,6 +119,10 @@ export const apiSlice = createApi({
             query: (videoId) => `/assignmentMark/${videoId}`,
             providesTags: (result, error, arg) => [{ type: "AssignmentMark", id: arg }],
         }),
+        /////////handle QuizeMark implement/////////
+
+
+
 
         ///////////handle assignment implement////////
         getAssignments: builder.query({
