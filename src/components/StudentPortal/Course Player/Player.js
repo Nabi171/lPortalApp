@@ -34,8 +34,6 @@ const Player = () => {
     const [student_id] = useState(1)
     const [mark] = useState(0);
     const [status] = useState("pending")
-
-
     const [repo_link, setRepolink] = useState('')
     // console.log(repo_link);
     // console.log(singleAssignmentMark);
