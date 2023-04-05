@@ -1,9 +1,12 @@
 import React from 'react';
 import logo from "../../learningportal.svg";
-import { Link } from 'react-router-dom';
-import { useGetAssignmentMarkQuery } from '../../../features/apiSlice';
+import { Link, useParams } from 'react-router-dom';
+import { useGetAssignmentMarkQuery, useGetSingleAssignmentMarkQuery } from '../../../features/apiSlice';
 import LeaderBoardTable from './LeaderBoardTable';
 const LeaderBoard = () => {
+    const { leaderbordId } = useParams();
+    const { data: SingleassignmentMark, isLoading2, isError2 } = useGetSingleAssignmentMarkQuery(leaderbordId);
+    console.log(SingleassignmentMark)
     const { data: assignmentMark, isLoading, isError } = useGetAssignmentMarkQuery();
     // decide what to render
     let content = null;
@@ -42,7 +45,7 @@ const LeaderBoard = () => {
                     <Link to='/'>  <img className="h-10" src={logo} /></Link>
                     <div className="flex items-center gap-3">
                         <a href="./Leaderboard.html" className="font-bold">Leaderboard</a>
-                        <h2>Saad Hasan</h2>
+                        <h2>{SingleassignmentMark ?.student_name}</h2>
                         <button
                             className="flex gap-2 border border-cyan items-center px-4 py-1 rounded-full text-sm transition-all hover:bg-cyan ">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
@@ -74,9 +77,9 @@ const LeaderBoard = () => {
                             <tbody>
                                 <tr className="border-2 border-cyan">
                                     <td className="table-td text-center font-bold">4</td>
-                                    <td className="table-td text-center font-bold">Saad Hasan</td>
+                                    <td className="table-td text-center font-bold">{SingleassignmentMark ?.student_name}</td>
                                     <td className="table-td text-center font-bold">50</td>
-                                    <td className="table-td text-center font-bold">50</td>
+                                    <td className="table-td text-center font-bold">{SingleassignmentMark ?.mark}</td>
                                     <td className="table-td text-center font-bold">100</td>
                                 </tr>
                             </tbody>

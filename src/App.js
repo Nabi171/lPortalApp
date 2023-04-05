@@ -61,7 +61,7 @@ function App() {
 
           <Route exact path='/StudentPortal/StudentReistration' element={<Resigtration />} />
 
-          <Route exact path='/StudentPortal/leaderboard' element={<LeaderBoard />} />
+          <Route exact path='/StudentPortal/leaderboard/:leaderbordId' element={<LeaderBoard />} />
           <Route exact path='/StudentPortal/quiz' element={<Quiz />} />
           <Route exact path='/StudentPortal/quizze/:quizzeId' element={<QuizTwo />} />
 

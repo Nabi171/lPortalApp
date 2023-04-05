@@ -69,7 +69,7 @@ const Player = () => {
 
                     /></Link>
                     <div className="flex items-center gap-3">
-                        <Link to="/StudentPortal/leaderboard">Leaderboard</Link>
+                        <Link to={`/StudentPortal/leaderboard/${svideoId}`}>Leaderboard</Link>
                         <h2 className="font-bold">Saad Hasan</h2>
                         <button
                             onClick={logout}
