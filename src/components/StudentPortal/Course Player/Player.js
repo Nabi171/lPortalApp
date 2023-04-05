@@ -35,8 +35,6 @@ const Player = () => {
     const [mark] = useState(0);
     const [status] = useState("pending")
     const [repo_link, setRepolink] = useState('')
-    // console.log(repo_link);
-    // console.log(singleAssignmentMark);
 
     const handleSubmit = (e) => {
         e.preventDefault();
