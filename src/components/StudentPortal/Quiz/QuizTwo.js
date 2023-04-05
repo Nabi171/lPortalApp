@@ -1,8 +1,38 @@
 import React from 'react';
 import logo from "../../learningportal.svg";
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
+import { useGetQuizzeQuery } from '../../../features/apiSlice';
+import ShowQuiz from './ShowQuiz';
 
 const QuizTwo = () => {
+    const { quizzeId } = useParams();
+    const { data: quizze, isLoading, isError } = useGetQuizzeQuery(quizzeId);
+
+    // decide what to render
+    let content = null;
+
+    if (isLoading) {
+        content = (
+            <>
+                <p>loading...</p>
+            </>
+        );
+    }
+
+    if (!isLoading && isError) {
+        content = <p>There is an error</p>;
+
+    }
+
+    if (!isLoading && !isError && quizze ?.length === 0) {
+        content = <p>There is no quizze</p>;
+    }
+
+    if (!isLoading && !isError && quizze ?.length > 0) {
+        // content = quizzes.map((quizze) => <ShowQuiz key={quizze.id} quizze={quizze} />)
+        content = <ShowQuiz quizze={quizze} />
+
+    }
     return (
         <div>
             {/* <!-- Navigatin Bar. It contains Logo, Center Text And Save Progress Button at the end --> */}
