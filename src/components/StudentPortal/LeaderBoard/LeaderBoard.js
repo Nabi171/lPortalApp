@@ -80,7 +80,7 @@ const LeaderBoard = () => {
                                     <td className="table-td text-center font-bold">{SingleassignmentMark ?.student_name}</td>
                                     <td className="table-td text-center font-bold">50</td>
                                     <td className="table-td text-center font-bold">{SingleassignmentMark ?.mark}</td>
-                                    <td className="table-td text-center font-bold">100</td>
+                                    <td className="table-td text-center font-bold">{SingleassignmentMark ?.totalMark}</td>
                                 </tr>
                             </tbody>
                         </table>

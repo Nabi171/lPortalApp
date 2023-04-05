@@ -126,7 +126,10 @@ export const apiSlice = createApi({
             keepUnusedDataFor: 600,
             providesTags: ["quizMark"],
         }),
-
+        getSingleQuizMark: builder.query({
+            query: (videoId) => `/quizmark/${videoId}`,
+            providesTags: (result, error, arg) => [{ type: "QuizeMark", id: arg }],
+        }),
 
 
         ///////////handle assignment implement////////
