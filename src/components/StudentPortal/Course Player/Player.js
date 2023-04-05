@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useGetVideoQuery, useGetSingleAssignmentMarkQuery, usePostAssignmentMarkMutation } from '../../../features/apiSlice';
 import logo from "../../learningportal.svg";
-import { useParams } from 'react-router';
+import { useParams, useNavigate } from 'react-router';
 import PlayerTwo from './PlayerTwo';
 import { Link } from 'react-router-dom';
 import { userLoggedOut } from '../../../features/auth/authSlice';
@@ -10,6 +10,8 @@ import { useDispatch } from 'react-redux';
 const Player = () => {
     const [showModal, setShowModal] = useState(false);
     const dispatch = useDispatch();
+    const navigate = useNavigate();
+
 
     const logout = () => {
         dispatch(userLoggedOut());
@@ -18,6 +20,11 @@ const Player = () => {
 
     const { svideoId } = useParams();
     const { data: video, isLoading, isError } = useGetVideoQuery(svideoId);
+    // console.log(video)
+    const handleQuiz = () => {
+        navigate(`/StudentPortal/quizze/${svideoId}`)
+    }
+
     const { data: singleAssignmentMark, isLoading2, isError2 } = useGetSingleAssignmentMarkQuery(svideoId);
     // const { createdAt, totalmark, student_name, assignment_id, title, student_id } = singleAssignmentMark;
     const [postAssignmentMark, { isLoading3, isSuccess3, isError3 }] = usePostAssignmentMarkMutation();
@@ -200,9 +207,11 @@ const Player = () => {
                                         এসাইনমেন্ট
                                     </button>
 
-                                    <Link to="/StudentPortal/quiz"
+                                    <button
+                                        onClick={handleQuiz}
+                                        //  to="/StudentPortal/quiz"
                                         className="px-3 font-bold py-1 border border-cyan text-cyan rounded-full text-sm hover:bg-cyan hover:text-primary">কুইজে অংশগ্রহণ করুন
-                                    </Link>
+                                    </button>
                                 </div>
                                 {
                                     video ? <p>{video.description}</p> :

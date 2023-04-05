@@ -23,6 +23,7 @@ import EditAssignment from './components/Admin Portal/Assignment/EditAssignment'
 import AddQuizze from './components/Admin Portal/Quizzes/AddQuizze';
 import EditQuiz from './components/Admin Portal/Quizzes/EditQuiz';
 import Player from './components/StudentPortal/Course Player/Player';
+import QuizTwo from './components/StudentPortal/Quiz/QuizTwo';
 
 function App() {
   const authChecked = useAuthCheck();
@@ -62,6 +63,7 @@ function App() {
 
           <Route exact path='/StudentPortal/leaderboard' element={<LeaderBoard />} />
           <Route exact path='/StudentPortal/quiz' element={<Quiz />} />
+          <Route exact path='/StudentPortal/quizze/:quizzeId' element={<QuizTwo />} />
 
           //adminPortal
           <Route exact path='/admin' element={<AdminLogin />} />
