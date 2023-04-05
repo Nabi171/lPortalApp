@@ -80,7 +80,14 @@ function App() {
           <Route exact path='/Dashboard/assignment/editAssignment/:assignmentId' element={<EditAssignment />} />
 
 
-          <Route exact path='/Dashboard/assignmentMark' element={<AssignmentMark />} />
+          <Route exact path='/Dashboard/assignmentMark' element={
+            <PrivateRoute>
+              <AssignmentMark />
+            </PrivateRoute>
+
+
+
+          } />
 
           //handle quizzes route
           <Route exact path='/Dashboard/quizzes' element={
