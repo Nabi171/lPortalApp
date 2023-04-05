@@ -1,12 +1,17 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const SidePlayer = ({ video }) => {
     const { title, id, description, url, views, duration, createdAt } = video;
+    const navigate = useNavigate();
+    const handlePlayer = () => {
+        navigate(`/StudentPortal/videos/${id}`)
+    }
+
     return (
 
 
-        <div>
+        <div onClick={handlePlayer}>
 
 
             <div className="w-full flex flex-row gap-2 cursor-pointer hover:bg-slate-900 p-2">
