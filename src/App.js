@@ -83,12 +83,22 @@ function App() {
           <Route exact path='/Dashboard/assignmentMark' element={<AssignmentMark />} />
 
           //handle quizzes route
-          <Route exact path='/Dashboard/quizzes' element={<Quizzes />} />
+          <Route exact path='/Dashboard/quizzes' element={
+
+            <PrivateRoute>
+              <Quizzes />
+            </PrivateRoute>
+
+          } />
           <Route exact path='/Dashboard/quizzes/addQuizze' element={<AddQuizze />} />
           <Route exact path='/Dashboard/quizzes/editquizze/:quizzeId' element={<EditQuiz />} />
 
           //handle videos route
-          <Route exact path='/Dashboard/videos' element={<Videos />} />
+          <Route exact path='/Dashboard/videos' element={
+            <PrivateRoute>
+              <Videos />
+            </PrivateRoute>
+          } />
           <Route exact path='/Dashboard/videos/addvideo' element={<AddVideo />} />
           <Route exact path='/Dashboard/videos/videoEdit/:videoId' element={<VideoEdit />} />
 

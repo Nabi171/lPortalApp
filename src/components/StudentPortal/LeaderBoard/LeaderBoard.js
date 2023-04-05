@@ -45,7 +45,7 @@ const LeaderBoard = () => {
                 <div className="max-w-7xl px-5 lg:px-0 mx-auto flex justify-between py-3">
                     <Link to='/'>  <img className="h-10" src={logo} /></Link>
                     <div className="flex items-center gap-3">
-                        <a href="./Leaderboard.html" className="font-bold">Leaderboard</a>
+                        <Link className="font-bold">Leaderboard</Link>
                         <h2>{SingleassignmentMark ?.student_name}</h2>
                         <button
                             className="flex gap-2 border border-cyan items-center px-4 py-1 rounded-full text-sm transition-all hover:bg-cyan ">
@@ -79,7 +79,9 @@ const LeaderBoard = () => {
                                 <tr className="border-2 border-cyan">
                                     <td className="table-td text-center font-bold">3</td>
                                     <td className="table-td text-center font-bold">{SingleassignmentMark ?.student_name}</td>
-                                    <td className="table-td text-center font-bold">{SingleQuizMark ?.mark}</td>
+                                    {SingleQuizMark ? <td className="table-td text-center font-bold">{SingleQuizMark ?.mark}</td>
+                                        : <td className="table-td text-center font-bold">0</td>
+                                    }
                                     <td className="table-td text-center font-bold">{SingleassignmentMark ?.mark}</td>
                                     {SingleQuizMark ? <td className="table-td text-center font-bold">{parseInt(SingleassignmentMark ?.mark) + parseInt(SingleQuizMark ?.mark)}</td>
                                         : <td className="table-td text-center font-bold">{parseInt(SingleassignmentMark ?.mark) + parseInt(0)}</td>
