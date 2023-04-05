@@ -203,6 +203,8 @@ export const {
     usePostAssignmentMarkMutation,
     useGetSingleAssignmentMarkQuery,
 
+    useGetQuizMarkQuery,
+
     useGetAssignmentsQuery,
     useGetAssignmentQuery,
     useAddAssignmentMutation,
