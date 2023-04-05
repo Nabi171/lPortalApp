@@ -19,7 +19,6 @@ const Player = () => {
 
     const { data: video, isLoading, isError } = useGetVideoQuery(svideoId);
     const { data: singleAssignmentMark, isLoading2, isError2 } = useGetSingleAssignmentMarkQuery(svideoId);
-
     // const { createdAt, totalmark, student_name, assignment_id, title, student_id } = singleAssignmentMark;
     const [postAssignmentMark, { isLoading3, isSuccess3, isError3 }] = usePostAssignmentMarkMutation();
 
