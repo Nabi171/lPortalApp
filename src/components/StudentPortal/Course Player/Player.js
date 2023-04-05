@@ -40,9 +40,7 @@ const Player = () => {
     // console.log(repo_link);
     // console.log(singleAssignmentMark);
 
-
     const handleSubmit = (e) => {
-
         e.preventDefault();
         console.log(repo_link, createdAt, totalmark, student_name, mark, title, assignment_id, status, student_id)
         setShowModal(false)
