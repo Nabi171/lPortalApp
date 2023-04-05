@@ -15,6 +15,7 @@ const Player = () => {
         dispatch(userLoggedOut());
         localStorage.clear();
     };
+
     const { svideoId } = useParams();
     const { data: video, isLoading, isError } = useGetVideoQuery(svideoId);
     const { data: singleAssignmentMark, isLoading2, isError2 } = useGetSingleAssignmentMarkQuery(svideoId);
