@@ -42,17 +42,22 @@ const Player = () => {
 
 
     const handleSubmit = (e) => {
-        console.log(repo_link, createdAt, totalmark, student_name, mark, title, assignment_id, status, student_id)
+
         e.preventDefault();
-        // addVideo({
-        //     title,
-        //     description,
-        //     url,
-        //     views,
-        //     duration,
-        //     createdAt
-        // });
-        // navigate('/Dashboard/videos')
+        console.log(repo_link, createdAt, totalmark, student_name, mark, title, assignment_id, status, student_id)
+        setShowModal(false)
+        postAssignmentMark({
+            repo_link,
+            createdAt,
+            totalmark,
+            student_name,
+            mark,
+            title,
+            assignment_id,
+            status,
+            assignment_id
+        });
+
     };
 
 
@@ -135,14 +140,15 @@ const Player = () => {
                                                     </button>
                                                 </div>
                                                 {/*body*/}
-                                                <form>
+                                                <form onSubmit={handleSubmit}
+                                                >
                                                     <div className="relative p-6 flex-auto">
                                                         <div>
                                                             <label for="github-address" className="sr-only">Github address</label>
                                                             <input
                                                                 value={repo_link}
                                                                 onChange={(e) => setRepolink(e.target.value)}
-                                                                name="text" type="email" autocomplete="github" required
+                                                                name="text" type="text" autocomplete="github" required
                                                                 className="login-input rounded-t-md" placeholder="Enter your github link" />
                                                         </div>
                                                         {/* <div>
@@ -165,8 +171,8 @@ const Player = () => {
                                                         <button
                                                             // className="bg-emerald-500 text-white active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
                                                             className="px-3 font-bold py-1 border border-cyan text-cyan rounded-full text-sm hover:bg-cyan hover:text-primary"
-                                                            type="button"
-                                                            onClick={() => setShowModal(false)}
+                                                            type="submit"
+                                                        // onClick={() => setShowModal(false)}
                                                         >
                                                             Submit Assignment
                                                     </button>
