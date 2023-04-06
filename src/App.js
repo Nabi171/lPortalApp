@@ -85,8 +85,6 @@ function App() {
               <AssignmentMark />
             </PrivateRoute>
 
-
-
           } />
 
           //handle quizzes route
