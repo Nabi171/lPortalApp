@@ -44,6 +44,8 @@ function App() {
 
           } />
 
+
+
           {/* <Route exact path='/StudentPortal/Course Player' element={
             <PrivateRoute>
               <CoursePlayer />
