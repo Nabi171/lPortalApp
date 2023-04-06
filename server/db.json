@@ -54,6 +54,12 @@
       "password": "$2a$10$0AZcL.qNF1yq7z3XDEoZcOs/mEjvvjj/X.hwps9LpId1veuT6epw2",
       "name": "JANNATUL MAOWA ANISA",
       "id": 8
+    },
+    {
+      "email": "jami@gmail.com",
+      "password": "$2a$10$sXdP7urMfK0EksczgrOaJu1kjl2XD.oJ442WeSLwDABSO/NFwNUSK",
+      "name": "Murad",
+      "id": 9
     }
   ],
   "videos": [

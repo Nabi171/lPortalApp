@@ -18,7 +18,7 @@ const Resigtration = () => {
             setError(responseError.data);
         }
         if (data ?.accessToken && data ?.user) {
-            navigate("/");
+            navigate("/StudentPortal/videos/:svideoId");
         }
     }, [data, responseError, navigate]);
 

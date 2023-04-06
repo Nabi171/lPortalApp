@@ -77,7 +77,14 @@ function App() {
           } />
 
           //handle Assignments route
-          <Route exact path='/Dashboard/assignment' element={<Assignment />} />
+          <Route exact path='/Dashboard/assignment' element={
+            <PrivateRoute>
+              <Assignment />
+            </PrivateRoute>
+
+          }
+
+          />
           <Route exact path='/Dashboard/assignment/addAssignment' element={<Addassignment />} />
           <Route exact path='/Dashboard/assignment/editAssignment/:assignmentId' element={<EditAssignment />} />
 
