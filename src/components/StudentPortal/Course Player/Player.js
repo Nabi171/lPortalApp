@@ -19,7 +19,10 @@ const Player = () => {
     };
 
     const { svideoId } = useParams();
+
     const { data: video, isLoading, isError } = useGetVideoQuery(svideoId);
+    const { data: svideo } = useGetVideoQuery(1);
+    console.log(svideo)
     // console.log(video)
     const handleQuiz = () => {
         navigate(`/StudentPortal/quizze/${svideoId}`)
@@ -41,7 +44,7 @@ const Player = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log(repo_link, createdAt, totalmark, student_name, mark, title, assignment_id, status, student_id)
+        // console.log(repo_link, createdAt, totalmark, student_name, mark, title, assignment_id, status, student_id)
         setShowModal(false)
         postAssignmentMark({
             repo_link,
@@ -100,7 +103,7 @@ const Player = () => {
                                     allowfullscreen></iframe>
 
                                 :
-                                <iframe width="100%" className="aspect-video" src="https://www.youtube.com/embed/56zUkaXJnUA"
+                                <iframe width="100%" className="aspect-video" src={svideo ?.url}
                                     title="Things I wish I knew as a Junior Web Developer - Sumit Saha - BASIS SoftExpo 2023"
                                     frameborder="0"
                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -184,14 +187,14 @@ const Player = () => {
                                 {
                                     video ? <h1 className="text-lg font-semibold tracking-tight text-slate-100">
                                         {video.title}
-                                    </h1> : <>Things I wish i knew as a junior web Developer-Basis SoftExpo</>
+                                    </h1> : <>{svideo ?.title}</>
                                 }
                                 {
                                     video ? <h2 className=" pb-4 text-sm leading-[1.7142857] text-slate-400">
                                         Uploaded on {video.createdAt}
                                         2020</h2> :
                                         <h2 className=" pb-4 text-sm leading-[1.7142857] text-slate-400">
-                                            Uploaded on 23 February 2020
+                                            Uploaded on 23 {svideo ?.createdAt}
                                         </h2>
                                 }
 
@@ -215,16 +218,7 @@ const Player = () => {
                                 </div>
                                 {
                                     video ? <p>{video.description}</p> :
-                                        <p className="mt-4 text-sm text-slate-400 leading-6">
-                                            আপনারা যারা বিগিনার হিসেবে রিয়্যাক্ট জেস নিয়ে কাজ করা শুরু করেছেন, তারা রিয়্যাক্ট এর বেশ
-                                            কিছু কনসেপ্ট ঠিক মতো আয়ত্ত না করতে পারার কারণে বিচিত্র কিছু সমস্যার সম্মুখীন হন এবং শেষ
-                                            পর্যন্ত বুঝতে না
-                                            পেরে হতাশ হয়ে পড়েন। তাদের জন্যই এই ভিডিওটি। এই ভিডিওতে আমি এমন ১০টি সমস্যার কথা তুলে ধরেছি
-                                            যেগুলো
-                                            বিগিনার হিসেবে আপনারা অহরহ সম্মুখীন হবেন। আশা করি ভিডিওটি দেখলে আপনাদের এই সমস্যাগুলো নিয়ে
-                                            আর কনফিউশন
-                                            থাকবেনা।
-                                </p>}
+                                        <p>{svideo ?.description}</p>}
                             </div>
                         </div>
 

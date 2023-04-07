@@ -182,6 +182,18 @@
           "isCorrect": false
         }
       ]
+    },
+    {
+      "question": "function in JavaScript?",
+      "video_title": " Function in JavaScript - JavaScript Job Interview question",
+      "options": {
+        "option1": "a",
+        "option2": "d",
+        "option3": "c",
+        "option4": "d",
+        "isCorrect": true
+      },
+      "id": 4
     }
   ],
   "assignmentMark": [
